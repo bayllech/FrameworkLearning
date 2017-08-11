@@ -27,7 +27,6 @@ public class HomeController {
         /*model.addAttribute("code", "000000");
         model.addAttribute("msg", "成功");*/
         model.addAttribute("msg", "success");
-        System.out.println("/jsp.");
         return "index";
     }
 
