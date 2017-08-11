@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.bayllech.project.mapper.TUserInfoMapper">
+
+    <resultMap id="BaseResultMap" type="cn.bayllech.project.pojo.TUserInfo">
+        <id column="USER_ID" jdbcType="VARCHAR" property="userId" />
+        <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+        <result column="USER_KEY" jdbcType="VARCHAR" property="userKey" />
+        <result column="SEX" jdbcType="VARCHAR" property="sex" />
+        <result column="USER_PHONE" jdbcType="VARCHAR" property="userPhone" />
+        <result column="HEAD_URL" jdbcType="VARCHAR" property="headUrl" />
+        <result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail" />
+        <result column="STATUS" jdbcType="VARCHAR" property="status" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="REGISTER_TIME" jdbcType="TIMESTAMP" property="registerTime" />
+        <result column="SOURCE_USER_ID" jdbcType="VARCHAR" property="sourceUserId" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        USER_ID, USER_NAME, USER_KEY, SEX, USER_PHONE,HEAD_URL, USER_EMAIL, STATUS,
+        CREATE_TIME, UPDATE_TIME,REGISTER_TIME
+    </sql>
+
+    <select id="findAllUser" resultType="cn.bayllech.project.pojo.TUserInfo">
+        SELECT <include refid="Base_Column_List"/> FROM T_USER_INFO
+    </select>
+</mapper>
