@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -39,6 +40,15 @@ public class HomeController {
     public List<TUserInfo> userInfo() {
         List<TUserInfo> userList = tuserInfoService.findAllUser();
         return userList;
+    }
+
+    @RequestMapping(value = "/userList")
+    @ResponseBody
+    public ModelMap userInfoList() {
+        ModelMap model = new ModelMap();
+        List<TUserInfo> userList = tuserInfoService.findAllUser();
+        model.addAttribute("userList", userList);
+        return model;
     }
 
 }
