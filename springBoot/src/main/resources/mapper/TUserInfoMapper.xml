@@ -21,7 +21,7 @@
         CREATE_TIME, UPDATE_TIME,REGISTER_TIME
     </sql>
 
-    <select id="findAllUser" resultType="cn.bayllech.project.pojo.TUserInfo">
+    <select id="findAllUser" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List"/> FROM T_USER_INFO
     </select>
 </mapper>

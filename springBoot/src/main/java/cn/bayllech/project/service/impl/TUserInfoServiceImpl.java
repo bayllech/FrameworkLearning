@@ -12,7 +12,7 @@ import java.util.List;
  * @Author bei.qi
  * @Date 2017-08-11 17:48
  */
-@Service("userInfoService")
+@Service
 public class TUserInfoServiceImpl implements TUserInfoService{
 
     @Autowired

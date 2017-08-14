@@ -18,8 +18,7 @@ import java.util.List;
 public class HomeController {
 
     @Autowired
-    private TUserInfoService userInfoService;
-
+    private TUserInfoService tuserInfoService;
 
     @RequestMapping()
     @ResponseBody
@@ -35,12 +34,11 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/user")
+    @RequestMapping(value = "/user")
     @ResponseBody
-    public ModelMap userInfo(ModelMap model) {
-        List<TUserInfo> userList = userInfoService.findAllUser();
-        model.addAttribute("userList",userList);
-        return model;
+    public List<TUserInfo> userInfo() {
+        List<TUserInfo> userList = tuserInfoService.findAllUser();
+        return userList;
     }
 
 }
