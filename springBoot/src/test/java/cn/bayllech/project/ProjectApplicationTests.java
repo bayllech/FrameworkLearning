@@ -18,7 +18,7 @@ public class ProjectApplicationTests {
 		/*JedisPoolConfig config = new JedisPoolConfig();
 		config.setMaxTotal(10);
 		config.setMaxIdle(5);
-		JedisPool jedisPool = new JedisPool(config,"106.15.224.201",6379,10000);
+		JedisPool jedisPool = new JedisPool(config,"106.15.224.201",6379,10000,"123456");
 		Jedis jedis = jedisPool.getResource();
 		jedis.set("name", "aliRedis");
 		String name = jedis.get("name");
