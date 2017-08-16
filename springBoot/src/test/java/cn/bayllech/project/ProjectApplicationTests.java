@@ -15,7 +15,7 @@ public class ProjectApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		JedisPoolConfig config = new JedisPoolConfig();
+		/*JedisPoolConfig config = new JedisPoolConfig();
 		config.setMaxTotal(10);
 		config.setMaxIdle(5);
 		JedisPool jedisPool = new JedisPool(config,"106.15.224.201",6379,10000);
@@ -23,7 +23,7 @@ public class ProjectApplicationTests {
 		jedis.set("name", "aliRedis");
 		String name = jedis.get("name");
 		System.out.println(name);
-		jedis.close();
+		jedis.close();*/
 	}
 
 }
