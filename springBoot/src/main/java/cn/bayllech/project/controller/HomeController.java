@@ -1,6 +1,8 @@
 package cn.bayllech.project.controller;
 
+import cn.bayllech.project.pojo.DUser;
 import cn.bayllech.project.pojo.TUserInfo;
+import cn.bayllech.project.service.DUserService;
 import cn.bayllech.project.service.TUserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,8 @@ public class HomeController {
 
     @Autowired
     private TUserInfoService tuserInfoService;
+    @Autowired
+    private DUserService dUserService;
 
     @RequestMapping()
     @ResponseBody
@@ -49,6 +53,15 @@ public class HomeController {
         List<TUserInfo> userList = tuserInfoService.findAllUser();
         model.addAttribute("userList", userList);
         return model;
+    }
+
+    @RequestMapping("/duser")
+    @ResponseBody
+    public ModelMap dubboUser() {
+        ModelMap modelMap = new ModelMap();
+        List<DUser> userList = dUserService.findAllUser();
+        modelMap.addAttribute("userList", userList);
+        return modelMap;
     }
 
 }
