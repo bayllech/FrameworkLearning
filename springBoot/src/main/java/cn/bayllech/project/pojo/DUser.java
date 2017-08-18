@@ -1,5 +1,6 @@
 package cn.bayllech.project.pojo;
 
+import javassist.SerialVersionUID;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -11,7 +12,7 @@ import java.util.Date;
  */
 @Data
 public class DUser implements Serializable{
-
+    private static final long serialVersionUID = 6224269273476565622L;
     private String userId;
     private String userName;
     private Date createTime;
