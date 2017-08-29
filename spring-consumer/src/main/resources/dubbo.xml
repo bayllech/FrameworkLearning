@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!-- 扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类 -->
     <dubbo:annotation package="cn.bayllech.project.service"/>
-    <!--提供方应用信息-->
+    <!--应用信息-->
     <dubbo:application name="springBoot_dubbo_consumer"/>
     <!--注册中心服务地址-->
-    <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}" check="false"/>
+    <dubbo:registry id="springboot-dubbo-consumer" protocol="zookeeper" address="${dubbo.registry.address}" check="false"/>
     <dubbo:protocol name="dubbo" port="20880"/>
 
     <!--调用-->
-    <dubbo:reference interface="cn.bayllech.service.DUserService" id="dUserService"/>
+    <!--<dubbo:reference interface="cn.bayllech.service.project.service" id="dUserService" registry="springboot-dubbo-consumer"/>-->
 </beans>
