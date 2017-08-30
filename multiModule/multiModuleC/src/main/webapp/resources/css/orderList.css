@@ -1,0 +1,189 @@
+.container{
+	box-sizing: border-box;
+	width:100%;
+	padding:30px;
+	background: #f0f3fa;
+	position:relative;
+}
+.select-area{
+	width:1200px;
+	box-sizing: border-box;
+	background: #ffffff;
+	padding:0px 20px 30px;
+}
+.flex-box{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.flex-1{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+}
+.flex-2{
+	-webkit-box-flex: 2;
+	-webkit-flex: 2;
+	    -ms-flex: 2;
+	        flex: 2;
+	
+}
+.flex-3{
+	-webkit-box-flex: 3;
+	-webkit-flex: 3;
+	    -ms-flex: 3;
+	        flex: 3;
+}
+
+li{
+	padding-top: 15px;
+	height:44px;
+	font-size: 16px;
+	color: #4a4a4a;
+	overflow: hidden;
+	line-height: 44px;
+	width:100%;
+	position: relative;
+	
+}
+li .prompt{
+	display: inline-block;
+	text-align: right;
+	font-size: 16px;
+	color: #4a4a4a;
+	
+}
+li .center{
+
+}
+li input{
+	padding:5px;
+	width:100px;
+}
+li select{
+	width:110px;
+	padding:5px;
+	background:#f6f8fc  url(../img/greyselect.png) no-repeat right center;
+}
+li .button-contain{
+	display: inline-block;
+	position: absolute;
+	right:50px;
+}
+li .button{
+	border:none;
+	padding:none;
+	margin:none;
+	background: #fff;
+	height:30px;
+	margin-left: 40px;
+	margin-top: 10px;
+	display: inline-block;
+	cursor: pointer;
+}
+table{
+	width:100%;
+	min-width:1500px;
+	background: #ffffff;
+	border-collapse:collapse;
+	font-size: 14px;
+	color: #4a4a4a;
+	margin-bottom: 30px;
+	margin-top: 20px;
+	overflow-x: auto;
+}
+table td{
+	height:44px;
+	text-align: center;
+	line-height: 44px;
+	border:1px solid #f6f8fc;
+}
+table th{
+	background: #f6f8fc; 
+	height:44px;
+	text-align: center;
+	line-height: 44px;
+}
+.pagination{
+	font-size: 14px;
+	width:100%;
+	text-align: center;
+	position: relative;
+}
+.pagination span{
+	margin-right: 20px;
+}
+.pagination .left{
+	position: absolute;
+	left:10px;
+}
+.pagination .button{
+	cursor: pointer;
+
+}
+
+.pagination input{
+	width:20px;
+	background: #f6f8fc;
+}
+.pagination .font-color{
+	color:#ee9c15;
+}
+/*�ܾ���Ʊ����*/
+.popRefuse{
+	width:690px;
+	height:410px;
+	background-color:#fff;
+	position:absolute;
+	top:88px;
+	left:83px;
+	font-size:14px;
+	box-sizing:border-box;
+	box-shadow: 0  1px 2px 0 rgba(0,0,0,0.1) ,  0 4px 8px 0 rgba(0,0,0,0.2);
+	padding:54px 76px 60px;
+	border-radius:8px;
+}
+.popRefuse span{
+    float:left;
+	margin-right:8px;
+	font-size:16px;
+}
+.popRefuse textarea{
+	color:#9b9b9b;
+	background-color:#F6F8FC;
+	width:363px;
+	height:200px;
+	padding:5px 6px;
+	border:1px solid #ECF0F9;
+	border-radius:5px;
+
+}
+.popRefuse button{
+	text-align:center;
+	margin-top:58px;
+	color:#fff;
+	background:#97A8FB;
+	padding:0 30px;
+	height:30px;
+	border-radius:20px;
+	border:0;
+	cursor:pointer;
+}
+.popRefuse button.btnOne{
+	margin:0 32px 0 236px;
+}
+input{
+	font-size: 14px;
+	color: #9b9b9b;
+	background: #f6f8fc !important;
+	border-radius: 4px;
+	border: 1px solid #e5e8eb;
+}
+select{
+	font-size: 14px;
+	color: #9b9b9b;
+	border-radius: 4px;
+	border: 1px solid #e5e8eb;
+}

@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -62,7 +64,13 @@ public class HomeController {
 
     @RequestMapping("/duser")
     @ResponseBody
-    public ModelMap dubboUser() {
+    public ModelMap dubboUser(HttpServletRequest request) {
+        String ip1 = request.getHeader("x-forwarded-for");
+        ip1 = request.getHeader("Proxy-Client-IP");
+        ip1 = request.getHeader("WL-Proxy-Client-IP");
+        ip1 = request.getRemoteAddr();
+        ip1 = request.getLocalAddr();
+        System.out.println(ip1);
         ModelMap modelMap = new ModelMap();
         List<DUser> userList = dUserService.findAllUser();
 //        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();

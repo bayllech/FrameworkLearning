@@ -1,0 +1,69 @@
+#content{
+	height: 800px;
+	background: #F0F3FA;
+	padding: 30px;
+}
+.role{
+	padding-top: 50px;
+	background: #fff;
+	padding-bottom: 70px;
+}
+.role .item{
+	width: 510px;
+	margin: 0 auto 30px auto;
+}
+.role .item input{
+	width: 383px;
+	border-radius: 4px;
+	background: #F0F3FA;
+	border: 1px solid #e5ebf8;
+	padding-left: 10px;
+	line-height: 30px;
+}
+.role .item .tip{
+	width: 110px;
+	text-align: right;
+	font-size: 20px;
+	color: #4a4a4a;
+}
+.role .item .tip i{
+	color: #FF7027;
+}
+.role .item select{
+	width: 395px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #F0F3FA url('../img/blackselect.png') no-repeat 360px center;
+}
+select option{
+	text-align: center;
+}
+.commit{
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	color: #4a4a4a;
+}
+.commit span{
+	color: #FF7027;
+}
+.submit{
+	width: 250px;
+	padding-left: 10px;
+	margin: 20px auto 0 auto;
+}
+.submit .return{
+	width: 100px;
+	height: 30px;
+	background: url('../img/return.png') no-repeat;
+	margin-right: 30px;
+}
+.submit .sure{
+	width: 100px;
+	height: 30px;
+	background: url('../img/makesure.png') no-repeat;
+}
+::-webkit-input-placeholder{
+	color: #9b9b9b;
+}

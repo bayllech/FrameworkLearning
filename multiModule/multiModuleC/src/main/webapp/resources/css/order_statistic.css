@@ -1,0 +1,165 @@
+@charset "utf-8";
+body{
+    background: #f0f3fa;
+}
+.cont{
+    margin: 30px;
+    min-width: 1200px;
+}
+.cont_head{
+    width: 1200px;
+    padding-left: 30px;
+    background: #ffffff;
+}
+.cont_head ul li{
+    float: left;
+    overflow: hidden;
+}
+.cont_head ul li span{
+    font-size: 16px;
+    color: #4a4a4a;
+    width: 90px;
+    text-align: right;
+}
+.cont_head ul li .input_List{
+    width: 120px;
+    height: 30px;
+    font-size: 14px;
+    color: #9b9b9b;
+    background: #f6f8fc;
+    border-radius: 4px;
+    border: 1px solid #e5e8eb;
+    margin: 30px 0 30px 10px;
+    padding-left: 10px;
+}
+
+/*复选框样式*/
+.cont_head ul li select{
+    border: 1px solid #e5e8eb;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    width: 132px;
+    height: 32px;
+    color: #9b9b9b;
+    border-radius: 4px;
+    padding:0 4%;
+    background:#f6f8fc url("../img/greyselect.png") no-repeat scroll right center;
+    background-position: 100px;
+    font-size: 14px;
+    margin: 30px 0 30px 5px;
+}
+.cont_head ul li select option{
+    width: 120px;
+    height: 22px;
+    margin-top: 1px;
+    background: #fff;
+    text-align: center;
+}
+
+
+/*列表样式*/
+/*.cont table{
+    width: 100%;
+    background: #ffffff;
+    border:none;
+    margin-top: 10px;
+}
+.cont table tr th{
+    background: #f6f8fc;
+    padding: 10px 0;
+}
+.cont table tr td{
+    text-align: center;
+    padding: 10px 0;
+
+}*/
+table{
+    width:100%;
+    background: #ffffff;
+    border-collapse:collapse;
+    font-size: 14px;
+    color: #4a4a4a;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    overflow-x: auto;
+}
+table td{
+    height:44px;
+    text-align: center;
+    line-height: 44px;
+    border:1px solid #f6f8fc;
+}
+table th{
+    background: #f6f8fc;
+    height:44px;
+    text-align: center;
+    line-height: 44px;
+}
+/*分页按钮样式*/
+.pagination{
+    font-size: 14px;
+    width:100%;
+    text-align: center;
+    position: relative;
+}
+.pagination span{
+    margin-right: 20px;
+}
+.pagination .left{
+    position: absolute;
+    left:10px;
+}
+.pagination .button{
+    cursor: pointer;
+
+}
+
+.pagination input{
+    width:20px;
+    background: #f6f8fc;
+}
+.pagination .font-color{
+    color:#ee9c15;
+}
+
+/*付款时间样式*/
+.cont_head ul li .Wdate{
+    width: 120px;
+    height: 30px;
+    font-size: 14px;
+    color: #9b9b9b;
+    border-radius: 4px;
+    border: 1px solid #e5e8eb;
+    margin: 30px 0 30px 10px;
+    padding-left: 10px;
+}
+.cont_head ul li i{
+    font-size: 16px;
+    color: #4a4a4a;
+    margin-left: 10px;
+    text-align: right;
+}
+
+li .button {
+    border: none;
+    padding: none;
+    margin: none;
+    background: #fff;
+    height: 30px;
+    margin-left:100px;
+    margin-top: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.fl {
+    float: left;
+}
+
+
+
+
+
+
+

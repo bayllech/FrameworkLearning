@@ -1,0 +1,131 @@
+#content{
+	height: 800px;
+	padding: 30px;
+	background: #F0F3FA;
+}
+.screen{
+	width: 1140px;
+	height: 90px;
+	background: #fff;
+	padding: 30px;
+}
+.screen span{
+	font-size: 16px;
+	color: #4a4a4a;
+
+}
+.screen input{
+	width: 110px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #e5ebf8;
+	background: #f6f8fc;
+	padding-left: 10px;
+	border-radius: 4px;
+}
+::-webkit-input-placeholder{
+	color: #9b9b9b;
+}
+.screen span.userid{
+	margin-left: 15px;
+	margin-right: 50px;
+}
+.screen span.phone{
+	margin-right: 38px;
+}
+.screen span.username{
+	margin-top: 30px;
+	margin-right: 75px;
+	margin-left: 32px;
+}
+.screen span.sex{
+	margin-left: 2px;
+}
+.screen span select{
+	width: 122px;
+	padding-left: 10px;
+	height: 30px;
+	line-height: 30px;
+	background: #f6f8fc url('../img/blackselect.png') no-repeat 85px center;
+	font-size: 14px;
+	color: #9b9b9b;
+	border-radius: 4px;
+	border: 1px solid #e5e8eb;
+}
+.butn{
+	margin-top: 28px;
+	margin-left: 100px;
+}
+.screen .query{
+	width: 100px;
+	height: 30px;
+	margin-right: 50px;
+	background: url('../img/query.png') no-repeat;
+}
+.screen .export{
+	width: 112px;
+	height: 30px;
+	background: url('../img/export.png') no-repeat;
+}
+table{
+	width: 100%;
+	margin-top: 10px;
+}
+table tr:nth-child(1){
+	background: #f6f8fc;
+}
+table tr th{
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 14px;
+	color: #4a4a4a;
+}
+
+table tr td{
+	background: #fff;
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+	border-right: 1px solid #e5ebf8;
+	border-bottom: 1px solid #e5ebf8;
+}
+table tr td div{
+	height: 58px;
+}
+table tr td img{
+	width: 50px;
+	height: 50px;
+}
+table tr td:last-child{
+	border-right: none;
+}
+table tr td a{
+	color: #4a4a4a;
+}
+.pagination{
+	font-size: 14px;
+	width:900px;
+	margin-top: 12px;
+	text-align: center;
+	position: relative;
+}
+.pagination span{
+	margin-right: 20px;
+}
+.pagination .left{
+	position: absolute;
+	left:10px;
+}
+.pagination .button{
+	cursor: pointer;
+
+}
+
+.pagination input{
+	width:20px;
+	background: #f6f8fc;
+}
+.pagination .font-color{
+	color:#ee9c15;
+}

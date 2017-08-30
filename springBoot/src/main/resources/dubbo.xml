@@ -10,7 +10,6 @@ http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubb
     <dubbo:application name="springBoot_dubbo_provider"/>
     <!--注册中心服务地址-->
     <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}" check="false"/>
-    <dubbo:protocol name="dubbo" port="20880"/>
 
     <bean id="dUserService" class="cn.bayllech.project.service.impl.DUserServiceImpl"/>
     <!--声明需要暴露的服务接口-->

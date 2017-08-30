@@ -1,0 +1,231 @@
+@charset "utf-8";
+/*样式重置*/
+a:link {
+    text-decoration: none;
+}
+a:visited{
+    color:#4a4a4a;
+}
+/*采购订单支付页面*/
+body{
+    background-color:#F0F3FA;
+}
+div.proPay{
+    padding:30px;
+    font-size:16px;
+    color:#4a4a4a;
+    background-color:#F0F3FA;
+}
+/*查询订单*/
+div.proHead{
+    width: 1140px;
+    padding:30px;
+    background-color:#fff;
+    margin-bottom:14px;
+}
+div.proHead li.proOne{
+    margin-bottom:30px;
+}
+.ProContent li{
+    float:left;
+    width:205px;
+    text-align:right;
+    margin-right:58px;
+}
+.ProContent input,.ProContent select{
+    width:115px;
+    height:30px;
+    background-color:#F6F8FC;
+    border-radius:4px;
+    border:1px solid #E5EBF8;
+    padding-left:10px;
+    color:#9b9b9b;
+    font-size:14px;
+}
+.ProContent label{
+    margin-right:5px;
+}
+.ProContent .rowW2{
+    width:253px;
+}
+
+
+/*
+.ProContent .rowW2 select{
+    margin-top: 1px;
+    background: none;
+    -webkit-appearance: none;
+}
+.ProContent .rowW2 option{
+    height: 30px;
+    background-color: #fff;
+    padding-right: 10px;
+    padding-left: 10px;
+    -webkit-appearance:none;
+    appearance:none;
+}
+.ProContent .rowW2 option:hover{
+    background-color:#97A8FB;
+}*/
+
+
+
+
+.ProContent .rowW3{
+    width:355px;
+    margin-right:0;
+}
+.ProContent select{
+    width:126px;
+    background:#F6F8FC url(../img/blackselect.png) no-repeat 105px
+}
+.ProContent .rowW3 span {
+    margin:0 3px;
+}
+.ProContent li button{
+    color:#fff;
+    background:#97A8FB;
+    padding:0 30px;
+    height:30px;
+    border-radius:20px;
+    border:0;
+    cursor:pointer;
+}
+a.sub{
+    margin-right:20px;
+    height: 30px;
+}
+a.find{
+    width: 100px;
+    background: url("../img/query.png") no-repeat;
+}
+a.exportExcel{
+    width: 110px;
+    background: url("../img/export.png") no-repeat;
+}
+/*数据列表*/
+.proTable{
+    background-color:#fff;
+    font-size:15px;
+}
+.proList{
+    height:44px;
+    line-height:44px;
+    border-bottom:1px solid #F6F8FC;
+}
+.listHead{
+    background-color:#F6F8FC;
+}
+.listBody{
+    font-size:14px;
+}
+.proList span{
+    display:inline-block;
+    text-align:center;
+    border-left:1px solid #F6F8FC;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+.proList span.c1{
+    width:55px;
+}
+.proList span.c2{
+    width:275px;
+}
+.proList span.c3{
+    width:225px;
+}
+.proList span.c4{
+    width:70px;
+}
+.proList span.c5{
+    width:280px;
+}
+.proList span.c6{
+    width:150px;
+}
+.proList span.c7{
+    width:90px;
+}
+.proList span.c8{
+    width:90px;
+}
+
+.proList span.c9{
+    width:90px;
+}
+.proList span.c10{
+    width:90px;
+}
+.proList span.c11{
+    width:90px;
+}
+
+/*总计和翻页跳转*/
+div.proFooter{
+    width:909px;
+    line-height:44px;
+    font-size:15px;
+    float:left;
+    margin-left:10px;
+}
+div.proFooter input {
+    width:30px;
+    height:20px;
+    background-color:#f0f0f0;
+    border-radius:4px;
+    border:1px solid #DAD9DA;
+    padding-left:5px;
+    margin:0 2px;
+    color:#9b9b9b;
+}
+.messageAmount{
+    float:right;
+}
+div.proFooter label{
+    color:#F2C474;
+    cursor:pointer;
+}
+div.proFooter a.prev,div.proFooter .next,div.proFooter .current,div.proFooter .page{
+    margin-right:20px;
+}
+
+/*财务管理数据导出页面*/
+.proPay.financeData{
+    margin:46px 0 0 46px;
+    background-color:#fff;
+}
+#financeData{
+    margin-bottom:80px;
+}
+.ProContent.clear.fr{
+    margin-right:380px;
+}
+
+table{
+    width:100%;
+    background: #ffffff;
+    border-collapse:collapse;
+    font-size: 14px;
+    color: #4a4a4a;
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+table td{
+    height:44px;
+    text-align: center;
+    line-height: 44px;
+    border:1px solid #f6f8fc;
+}
+table th{
+    background: #f6f8fc;
+    height:44px;
+    text-align: center;
+    line-height: 44px;
+}
+table td a{
+    margin: 0 5px;
+    color: #4a4a4a;
+}

@@ -1,0 +1,164 @@
+#header{
+	width: 100%;
+	height: 74px;
+	background: #8DA2FE;
+	min-width: 1900px;
+}
+#header .header_L{
+	float: left;
+	width: 190px;
+	height: 100%;
+	background: #697ced;
+}
+#header .toplogo{
+	display: block;
+	float: left;
+	margin-left: 60px;
+	margin-top: 15px;
+}
+#header .header_R{
+	width: 100%;
+}
+.header_R .header_news{
+	float: right;
+	margin-right: 32px;
+	font-size: 18px;
+	color: #fff;
+	margin-top: 13px;
+}
+.header_news .mr10{
+	margin-right: 10px;
+}
+.username i{
+	margin-left: 5px;
+}
+.nav_left{
+	width: 159px;
+	padding: 26px 0 0 30px;
+	height: 73px;
+	border-bottom: 1px solid #f6f8fc;
+	border-right: 1px solid #f6f8fc;
+}
+.nav_left .headimg{
+	float: left;
+}
+.nav_left .nav_name{
+	color: #5aa0f1;
+	font-size: 18px;
+	margin-left: 15px;
+	margin-top: 12px;
+	max-width: 88px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#content{
+	width: 100%;
+	height: 100%;
+	min-width: 1200px;
+}
+#content .main_left{
+	background: #fff;
+	width: 190px;
+	min-height: 800px;
+}
+.main_left .managers{
+	width: 100%;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 700;
+	margin: 15px 0;
+}
+.main_left .managers .arrow{
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	margin-left: 10px;
+	background: url('../img/blackselect.png') no-repeat center;
+}
+.main_left .managers:nth-child(1){
+	background: url('../img/order.png') no-repeat 32px 11px;
+}
+.main_left .managers:nth-child(2){
+	background: url('../img/moneyicon.png') no-repeat 32px 11px;
+}
+.main_left .managers:nth-child(3){
+	background: url('../img/moneyctrl.png') no-repeat 32px 11px;
+}
+.main_left .managers:nth-child(4){
+	background: url('../img/quanxian.png') no-repeat 32px 11px;
+}
+.main_left .managers:nth-child(5){
+	background: url('../img/uesrmana.png') no-repeat 32px 11px;
+}
+
+.main_left .managers .items{
+	font-weight: 400;
+	font-size: 14px;
+	color: #4a4a4a;
+	padding-left: 30px;
+	text-align: left;
+	width: 160px;
+	margin-top: 30px;
+	cursor: pointer;
+}
+.main_left .managers .items.cur{
+	color: #97A8FB;
+}
+.main_left .managers .title{
+	width: 192px;
+	padding-left: 8px;
+	line-height: 40px;
+	cursor: pointer;
+	text-align: center;	
+}
+.managers .title.click{
+	background: url('../img/choose.png') no-repeat 15px 0;
+	background-size: 160px 40px;
+	color: #fff;
+}
+.managers .title.click .arrow{
+	background: url('../img/whiteselectop.png') no-repeat center;
+}
+.main-right{
+	margin-left: 190px;
+	-min-height: 770px;
+	background: #f0f3fa;
+}
+.main-right .tips{
+	font-size: 20px;
+	color: #4a4a4a;
+	margin-left: 234px;
+	padding-left: 10px;
+	line-height: 26px;
+	border-left: 2px solid #7D92FA;
+}
+.my_content .tips{
+	font-size: 20px;
+	color: #4a4a4a;
+	margin-left: 30px;
+	margin-top: 40px;
+	padding-left: 10px;
+	line-height: 26px;
+	border-left: 2px solid #7D92FA;
+}
+.main-right table{
+	width: 77%;
+	margin-left: 234px;
+	margin-top: 12px;
+}
+.my_content table{
+	width: 1100px;
+	margin-left: 30px;
+	margin-top: 12px;
+}
+table tr:nth-child(1){
+	background: #F6F8FC;
+}
+table tr{
+	background: #fff;
+	height: 44px;
+	line-height: 44px;
+}
+table tr td{
+	text-align: center;
+}

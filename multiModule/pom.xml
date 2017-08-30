@@ -8,6 +8,7 @@
     <modules>
         <module>multiModuleA</module>
         <module>multiModuleB</module>
+        <module>multiModuleC</module>
     </modules>
     <packaging>pom</packaging>
 

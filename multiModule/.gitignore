@@ -1,5 +1,4 @@
 
-.idea/
+/.idea/
 multiModule.iml
 /target/
-src/

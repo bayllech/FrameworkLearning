@@ -1,0 +1,50 @@
+.container{
+	box-sizing: border-box;
+	width:100%;
+	padding:30px;
+	background: #f0f3fa;
+	
+}
+.content{
+	padding:0px 32px 32px;
+	background: #ffffff;
+}
+.set{
+	margin-bottom: 14px;
+	height:210px;
+	position: relative;
+}
+.set .button{
+	cursor: pointer;
+	position: absolute;
+	bottom: 30px;
+	left:50%;
+	transform:translateX(-50%);
+}
+.set p{
+	padding-top: 18px;
+	font-size: 16px;
+	font-weight: 600;
+	color:#4a4a4a;
+}
+.set p input{
+	width:40px;
+	height:20px;
+	border:1px solid #4a4a0e;
+	border-radius: 5px;
+	text-align: center;
+	background: #f0f3fa;
+}
+h3{
+	padding-top: 24px;
+	maigin-bottom:14px;
+	font-size: 14px;
+	color:#4a4a4a;
+}
+.rule{
+	height:140px;
+}
+.rule div{
+	font-size: 12px;
+	color:#4a4a4a;
+}

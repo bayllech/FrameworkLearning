@@ -1,0 +1,140 @@
+#content{
+	width: 1000px;
+	background: #F0F3FA;
+	padding: 40px 40px 0 30px;
+	position:relative;
+}
+#content .title{
+	padding-left: 30px;
+	font-size: 16px;
+	color: #4a4a4a;
+	line-height: 44px;
+	background: #f6f8fc;
+}
+#content .menu{
+	background: #fff;
+	padding-top: 30px;
+	padding-left: 25px;
+	margin-bottom: 15px;
+}
+.menu .item{
+	font-size: 16px;
+	color: #4a4a4a;
+	margin-bottom: 30px;
+}
+.menu .item span{
+	width: 128px;
+	text-align: right;
+}
+.menu .item input{
+	width: 390px;
+	height: 28px;
+	line-height: 28px;
+	border: 1px solid #E5EBF8;
+	border-radius: 4px;
+	color: #9b9b9b;
+	background: #f6f8fc;
+	padding-left: 10px;
+}
+::-webkit-input-placeholder{
+	color: #9b9b9b;
+}
+.menu .tips{
+	margin-top: 40px;
+	font-size: 16px;
+	color: #FF8749;
+	padding-bottom: 30px;
+}
+.people{
+	background: #fff;
+	padding: 30px 0 30px 40px;
+}
+.people .detail{
+	font-size: 14px;
+	color: #4a4a4a;
+	line-height: 38px;
+}
+.people .detail .name{
+	margin-right: 8px;
+}
+.radio{
+	float: left;
+	margin-top: 11px;
+	margin-right: 10px;
+	width: 14px;
+	height: 14px;
+	background: url('../img/nopermissions.png') no-repeat 0 0;
+}
+.radio.current{
+	background: url('../img/permissions.png') no-repeat 0 0;
+}
+.makesure{
+	width: 130px;
+	height: 30px;
+	background: url('../img/moneysure.png') no-repeat;
+}
+.submit{
+	width: 100%;
+	text-align: center;
+	padding-top: 30px;
+}
+/*ͬ���˿��*/
+.popBox,.popMisoperation{
+	background-color:#fff;
+	position:absolute;
+	top:174px;
+	left:320px;
+	font-size:14px;
+	box-sizing:border-box;
+	box-shadow: 0  1px 2px 0 rgba(0,0,0,0.1) ,  0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.popBox{
+	width:500px;
+	height:430px;
+	left:225px;
+	padding:50px 70px 50px;
+}
+.popBox p{
+	margin-bottom:20px;
+	color:#9b9b9b;
+	font-size:16px;
+}
+.style_total{
+	color:#9b9b9b;
+	font-size:16px;
+}
+.popBox_passengers{
+	color:#4a4a4a;
+	margin:10px 15px 0 0;
+}
+.popBox_thirdRefundAmount,.popBox_refundAmount{
+	font-size:18px;
+	color:#8DA2FE;
+	margin-top:10px;
+}
+.popBox p span{
+	margin-left:5px;
+}
+.popBox button{
+	text-align:center;
+	margin:50px 52px 0 0;
+	color:#fff;
+	background:#97A8FB;
+	padding:0 30px;
+	height:30px;
+	border-radius:20px;
+	border:0;
+	cursor:pointer;
+}
+.popBox button.btnOne{
+	margin-left:68px;
+}
+
+/*���������*/
+.popMisoperation{
+	text-align: center;
+	width:300px;
+	height:160px;
+	padding:60px 24px;
+}

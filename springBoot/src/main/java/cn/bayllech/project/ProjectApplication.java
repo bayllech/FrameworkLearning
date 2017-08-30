@@ -8,6 +8,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ImportResource;
 
+import java.io.IOException;
+
 @SpringBootApplication
 @ImportResource({"classpath:dubbo.xml"})
 public class ProjectApplication extends SpringBootServletInitializer{

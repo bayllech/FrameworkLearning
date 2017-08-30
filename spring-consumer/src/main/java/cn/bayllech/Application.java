@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ImportResource;
  * @Date 2017-08-21 9:32
  */
 @SpringBootApplication
+@ImportResource("classpath:applicationContext.xml")
 public class Application  {
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
