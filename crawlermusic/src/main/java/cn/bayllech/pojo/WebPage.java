@@ -20,6 +20,12 @@ public class WebPage {
         this.url = url;
     }
 
+    public WebPage(String url, PageType song, String html) {
+        this.url = url;
+        this.type = song;
+        this.html = html;
+    }
+
     public enum PageType{
         song,playlist,playlists;
     }
