@@ -7,6 +7,7 @@
           <element id="module-output" name="crawlermusic" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.7.2" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:18.0" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.8.2" />
