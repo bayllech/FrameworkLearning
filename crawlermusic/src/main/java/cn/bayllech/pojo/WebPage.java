@@ -1,8 +1,5 @@
 package cn.bayllech.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 /**
  * @Author bei.qi
  * @Description 网页爬取的实例

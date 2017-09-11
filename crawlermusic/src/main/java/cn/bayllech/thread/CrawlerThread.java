@@ -1,6 +1,5 @@
 package cn.bayllech.thread;
 
-import cn.bayllech.pojo.Song;
 import cn.bayllech.pojo.WebPage;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -35,13 +34,13 @@ public class CrawlerThread {
     private List<WebPage> parsePlaylists(WebPage webPage) {
         List<WebPage> webPages = new ArrayList<>();
         Elements songs = Jsoup.parse(webPage.getHtml()).select("#m-pl-container li p.dec a");
-        return songs.stream().map(e -> new WebPage(BASE_URL + e.attr("href"), WebPage.PageType.playlists, e.html())).collect(Collectors.toList());
+        return songs.stream().map(e -> new WebPage(BASE_URL + e.attr("href"), WebPage.PageType.playlist, e.html())).collect(Collectors.toList());
     }
 
     private List<WebPage> parsePlaylist(WebPage webPage) {
         List<WebPage> webPages = new ArrayList<>();
         Elements songs = Jsoup.parse(webPage.getHtml()).select("ul.f-hide li a");
-        return songs.stream().map(e -> new WebPage(BASE_URL + e.attr("href"), WebPage.PageType.playlist, e.html())).collect(Collectors.toList());
+        return songs.stream().map(e -> new WebPage(BASE_URL + e.attr("href"), WebPage.PageType.song, e.html())).collect(Collectors.toList());
     }
 
  /*   private Song parseSong(WebPage webPage) throws Exception {
@@ -49,12 +48,20 @@ public class CrawlerThread {
     }
 */
     public static void main(String[] args) throws IOException {
+        Jsoup.connect("http://music.163.com/playlist?id=317113395")
+                .header("Referer", "http://music.163.com/")
+                .header("Host", "music.163.com").get().select("ul[class=f-hide] a")
+                .stream().map(w-> w.text() + "-->" + w.attr("href"))
+                .forEach(System.out::println);
+
+/*
         WebPage webPage = new WebPage("http://music.163.com/discover/playlist/?order=hot&cat=%E5%85%A8%E9%83%A8&limit=35&offset=0", WebPage.PageType.playlists);
         CrawlerThread crawlerThread = new CrawlerThread();
         crawlerThread.fetchHtml(webPage);
         System.out.println(webPage.getHtml());
 //        System.out.println(crawlerThread.parsePlaylists(webPage));
 //        System.out.println(crawlerThread.parsePlaylist(webPage));
+*/
 
     }
 
