@@ -1,5 +1,6 @@
 package cn.bayllech.pojo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Data;
  * @Date 2017-09-08 14:20
  */
 @Data
+@AllArgsConstructor
 public class Song {
     private String url;
     private String title;
