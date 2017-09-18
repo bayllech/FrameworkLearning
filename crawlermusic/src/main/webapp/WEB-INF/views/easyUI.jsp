@@ -15,9 +15,48 @@
     <script type="text/javascript" src="/resources/easyui/jquery.easyui.min.js"></script>
 </head>
 <body>
-    <div id="p" class="easyui-panel" style="width:500px;height:200px;padding:10px;"
-         title="My Panel" data-options="iconCls:'icon-save',collapsible:true">
-        The panel
+    <input id="pwd" name="pwd" type="password" class="easyui-validatebox" data-options="required:true" />
+    <br>
+    <input id="rpwd" name="rpwd" type="password" class="easyui-validatebox"
+           required="required" validType="equals['#pwd']" />
+    <br>
+    <div id="cc" class="easyui-calendar" style="width:180px;height:180px;"></div>
+    <div id="pp" class="easyui-pagination" data-options="total:2000,pageSize:10"
+         style="background:#efefef;border:1px solid #ccc;">
     </div>
+
+
+
+    <script>
+        $.extend($.fn.validatebox.defaults.rules, {
+            equals: {
+                validator: function(value,param){
+                    return value == $(param[0]).val();
+                },
+                message: '密码不一致'
+            }
+        });
+
+        $('#cc').calendar({
+            onSelect: function(date){
+                alert(date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate());
+            }
+        });
+
+        $('#pp').pagination({
+            pageList: [10,20,50,100],
+            total: 114,
+            buttons: [{
+                iconCls:'icon-add',
+                handler:function(){alert('add')}
+            },'-',{
+                iconCls:'icon-save',
+                handler:function(){alert('save')}
+            }]
+        });
+
+
+    </script>
+
 </body>
 </html>
