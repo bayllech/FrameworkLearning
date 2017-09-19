@@ -21,7 +21,7 @@ import java.util.List;
 @Controller
 public class EasyUIController {
 
-    @RequestMapping
+    @RequestMapping("/")
     public String userList(){
         return "datagridCRUD";
     }
