@@ -1,6 +1,7 @@
 package cn.bayllech.controller;
 
 import cn.bayllech.pojo.Song;
+import cn.bayllech.pojo.User;
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,23 @@ import java.util.List;
  */
 @Controller
 public class EasyUIController {
+
+    @RequestMapping
+    public String userList(){
+        return "datagridCRUD";
+    }
+
+    @RequestMapping("/getUserList")
+    @ResponseBody
+    public List<User> getUserList() {
+        User user1 = new User("张三", "小野猫", "020-324325", "3242342@qq.com");
+        User user2 = new User("李四", "大怪兽", "020-324325", "3242342@qq.com");
+        User user3 = new User("tom", "singleDog", "020-324325", "3242342@qq.com");
+        List<User> users = Arrays.asList(user1, user2, user3);
+        return users;
+    }
+
+
 
     @GetMapping("/easyui")
     public String easyui() {
