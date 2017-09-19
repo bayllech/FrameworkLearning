@@ -36,4 +36,33 @@ public class EasyUIController {
         modelMap.addAttribute("lists", lists);
         return modelMap;
     }
+
+    @RequestMapping("getCCData")
+    @ResponseBody
+    public String getCCData() {
+        String s = "[{\"id\":1,\"text\":\"text1\"},{\"id\":2,\"text\":\"text2\"},{\"id\":3,\"text\":\"text3\",\"selected\":true},{\"id\":4,\"text\":\"text4\"},{\"id\":5,\"text\":\"text5\"}]";
+        return s;
+    }
+
+    @RequestMapping("getTreeData")
+    @ResponseBody
+    public String getTreeData() {
+        String s = "[{    \n" +
+                "    \"id\": 1,    \n" +
+                "    \"text\": \"Node 1\",    \n" +
+                "    \"state\": \"closed\",    \n" +
+                "    \"children\": [{    \n" +
+                "        \"id\": 11,    \n" +
+                "        \"text\": \"Node 11\"   \n" +
+                "    },{    \n" +
+                "        \"id\": 12,    \n" +
+                "        \"text\": \"Node 12\"   \n" +
+                "    }]    \n" +
+                "},{    \n" +
+                "    \"id\": 2,    \n" +
+                "    \"text\": \"Node 2\",    \n" +
+                "    \"state\": \"closed\"   \n" +
+                "}]  ";
+        return s;
+    }
 }
