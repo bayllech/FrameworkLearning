@@ -8,14 +8,15 @@
 <head>
     <meta charset="UTF-8">
     <title>UserList</title>
-    <link rel="stylesheet" type="text/css" href="/resources/easyui/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="/resources/easyui/themes/icon.css">
+    <link rel="stylesheet" href="/resources/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" href="/resources/easyui/themes/icon.css">
     <script type="text/javascript" src="/resources/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/resources/easyui/locale/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript" src="/resources/easyui/jquery.easyui.min.js"></script>
 </head>
 <body>
 
+<%--用户列表开始--%>
 <table id="dg" title="用户列表" class="easyui-datagrid" style="width:550px;height:250px" url="/getUserList"
        toolbar="#toolbar" rownumbers="true" fitColumns="true" singleSelect="true">
     <thead>
@@ -32,7 +33,44 @@
     <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">编辑用户</a>
     <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">删除用户</a>
 </div>
+<%--用户列表结束--%>
 
+
+<%--对话框开始--%>
+<div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px" 		closed="true" buttons="#dlg-buttons">
+    <div class="ftitle">用户信息</div>
+    <form id="fm" method="post">
+        <div class="fitem">
+            <label>用户名：  </label>
+            <input name="firstname" class="easyui-validatebox" required="true">
+        </div>
+        <div class="fitem">
+            <label>昵称：    </label>
+            <input name="lastname" class="easyui-validatebox" required="true">
+        </div>
+        <div class="fitem">
+            <label>Phone:   </label>
+            <input name="phone">
+        </div>
+        <div class="fitem">
+            <label>Email:   </label>
+            <input name="email" class="easyui-validatebox" validType="email">
+        </div>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveUser()">保存</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+</div>
+<%--对话框结束--%>
+
+<script>
+    function newUser(){
+        $('#dlg').dialog('open').dialog('setTitle','新增用户');
+        $('#fm').form('clear');
+        url = 'save_user.php';
+    }
+</script>
 
 
 </body>
