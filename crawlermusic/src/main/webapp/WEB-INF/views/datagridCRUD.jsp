@@ -37,23 +37,24 @@
 
 
 <%--对话框开始--%>
-<div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px" 		closed="true" buttons="#dlg-buttons">
+<div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+     closed="true" buttons="#dlg-buttons">
     <div class="ftitle">用户信息</div>
     <form id="fm" method="post">
         <div class="fitem">
-            <label>用户名：  </label>
+            <label>用户名:</label>
             <input name="firstname" class="easyui-validatebox" required="true">
         </div>
         <div class="fitem">
-            <label>昵称：    </label>
+            <label>昵称:</label>
             <input name="lastname" class="easyui-validatebox" required="true">
         </div>
         <div class="fitem">
-            <label>Phone:   </label>
+            <label>Phone:</label>
             <input name="phone">
         </div>
         <div class="fitem">
-            <label>Email:   </label>
+            <label>Email:</label>
             <input name="email" class="easyui-validatebox" validType="email">
         </div>
     </form>
@@ -68,7 +69,27 @@
     function newUser(){
         $('#dlg').dialog('open').dialog('setTitle','新增用户');
         $('#fm').form('clear');
-        url = 'save_user.php';
+        url = '/saveUser';
+    }
+    function saveUser(){
+        $('#fm').form('submit',{
+            url: url,
+            onSubmit: function(){
+                return $(this).form('validate');
+            },
+            success: function(result){
+                var result = eval('('+result+')');
+                if (result.errorMsg){
+                    $.messager.show({
+                        title: 'Error',
+                        msg: result.errorMsg
+                    });
+                } else {
+                    $('#dlg').dialog('close');		// close the dialog
+                    $('#dg').datagrid('reload');	// reload the user data
+                }
+            }
+        });
     }
 </script>
 

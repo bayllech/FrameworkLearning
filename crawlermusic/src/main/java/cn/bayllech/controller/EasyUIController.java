@@ -7,11 +7,14 @@ import com.google.common.collect.Lists;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author bei.qi
@@ -34,6 +37,20 @@ public class EasyUIController {
         User user3 = new User("tom", "singleDog", "020-324325", "3242342@qq.com");
         List<User> users = Arrays.asList(user1, user2, user3);
         return users;
+    }
+
+    @PostMapping("saveUser")
+    @ResponseBody
+    public ModelMap saveUser(String firstname, String lastname, String phone, String email) {
+        System.out.println(firstname);
+        System.out.println(lastname);
+        System.out.println(phone);
+        System.out.println(email);
+        ModelMap modelMap = new ModelMap();
+        if (firstname == null) {
+            modelMap.addAttribute("errorMsg", "error");
+        }
+        return modelMap;
     }
 
 
