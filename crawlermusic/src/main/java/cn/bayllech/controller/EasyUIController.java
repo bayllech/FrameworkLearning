@@ -6,10 +6,7 @@ import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -32,9 +29,9 @@ public class EasyUIController {
     @RequestMapping("/getUserList")
     @ResponseBody
     public List<User> getUserList() {
-        User user1 = new User("张三", "小野猫", "020-324325", "3242342@qq.com");
-        User user2 = new User("李四", "大怪兽", "020-324325", "3242342@qq.com");
-        User user3 = new User("tom", "singleDog", "020-324325", "3242342@qq.com");
+        User user1 = new User(1,"张三", "小野猫", "020-324325", "3242342@qq.com");
+        User user2 = new User(2,"李四", "大怪兽", "020-324325", "3242342@qq.com");
+        User user3 = new User(3,"tom", "singleDog", "020-324325", "3242342@qq.com");
         List<User> users = Arrays.asList(user1, user2, user3);
         return users;
     }
@@ -53,6 +50,23 @@ public class EasyUIController {
         return modelMap;
     }
 
+    @PostMapping("destroyUser")
+    @ResponseBody
+    public ModelMap destroyUser(Integer id) {
+        System.out.println(id);
+        ModelMap modelMap = new ModelMap();
+        if (id != null) {
+            modelMap.addAttribute("errorMsg", "error");
+        } else {
+            modelMap.addAttribute("success", "success");
+        }
+        return modelMap;
+    }
+
+    @RequestMapping("updateUser")
+    public void updateUser(@RequestParam("id") Integer id) {
+        System.out.println(id);
+    }
 
 
     @GetMapping("/easyui")

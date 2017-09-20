@@ -77,7 +77,7 @@
             onSubmit: function(){
                 return $(this).form('validate');
             },
-            success: function(result){
+            success: function(result){              //
                 var result = eval('('+result+')');
                 if (result.errorMsg){
                     $.messager.show({
@@ -90,6 +90,34 @@
                 }
             }
         });
+    }
+    function destroyUser(){
+        var row = $('#dg').datagrid('getSelected');
+        if (row){
+            $.messager.confirm('Confirm','确定要删除该用户?',function(r){
+                if (r){
+                    $.post('/destroyUser',{id:row.id},function(result){
+                        if (result.success){
+                            $('#dg').datagrid('reload');	// reload the user data
+                        } else {
+                            $.messager.show({	// show error message
+                                title: 'Error',
+                                msg: result.errorMsg
+                            });
+                        }
+                    },'json');   //json
+                }
+            });
+        }
+    }
+
+    function editUser() {
+        var row = $('#dg').datagrid('getSelected');
+        if (row){
+            $('#dlg').dialog('open').dialog('setTitle','编辑用户');
+            $('#fm').form('load',row);
+            url = '/updateUser?id='+row.id;
+        }
     }
 </script>
 
