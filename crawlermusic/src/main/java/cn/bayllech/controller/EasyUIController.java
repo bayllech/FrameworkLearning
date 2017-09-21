@@ -41,11 +41,11 @@ public class EasyUIController {
     @ResponseBody
     public ModelMap getJson() {  //todo 返回值为Json对象 {attribute对象1:[对象1，对象3],attribute对象2}
         ModelMap model = new ModelMap();
-        User user = new User("李四", "大怪兽", "020-324325", "3242342@qq.com");
-        User user1 = new User("张三", "小野猫", "020-324325", "3242342@qq.com");
+        User user = new User(1,"李四", "大怪兽", "020-324325", "3242342@qq.com");
+        User user1 = new User(2,"张三", "小野猫", "020-324325", "3242342@qq.com");
         List<User> users = Lists.newArrayList(user, user1);
         model.addAttribute("users",users);
-        User user3 = new User("tom", "singleDog", "020-324325", "3242342@qq.com");
+        User user3 = new User(3,"tom", "singleDog", "020-324325", "3242342@qq.com");
         model.addAttribute("user", user3);
         return model;
     }
