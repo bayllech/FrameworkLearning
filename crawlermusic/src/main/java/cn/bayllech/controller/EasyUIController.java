@@ -1,5 +1,6 @@
 package cn.bayllech.controller;
 
+import cn.bayllech.pojo.ComobboText;
 import cn.bayllech.pojo.Song;
 import cn.bayllech.pojo.User;
 import com.alibaba.fastjson.JSON;
@@ -24,7 +25,7 @@ import java.util.Map;
 @Controller
 public class EasyUIController {
 
-    @RequestMapping("/")
+    @RequestMapping("")  //todo 必须有值，即使为空也要加上"";如果为"/"，则请求地址需多个/;否则css,js等无法加载
     public String userList(){
         return "datagridCRUD";
     }
@@ -37,6 +38,19 @@ public class EasyUIController {
         User user3 = new User("tom", "singleDog", "020-324325", "3242342@qq.com");
         List<User> users = Arrays.asList(user1, user2, user3);
         return users;
+    }
+
+    @RequestMapping("getJson")
+    @ResponseBody
+    public ModelMap getJson() {  //todo 返回值为Json对象 {attribute对象1:[对象1，对象3],attribute对象2}
+        ModelMap model = new ModelMap();
+        User user = new User("李四", "大怪兽", "020-324325", "3242342@qq.com");
+        User user1 = new User("张三", "小野猫", "020-324325", "3242342@qq.com");
+        List<User> users = Lists.newArrayList(user, user1);
+        model.addAttribute("users",users);
+        User user3 = new User("tom", "singleDog", "020-324325", "3242342@qq.com");
+        model.addAttribute("user", user3);
+        return model;
     }
 
     @PostMapping("saveUser")
@@ -74,9 +88,13 @@ public class EasyUIController {
 
     @RequestMapping("getCCData")
     @ResponseBody
-    public String getCCData() {
-        String s = "[{\"id\":1,\"text\":\"text1\"},{\"id\":2,\"text\":\"text2\"},{\"id\":3,\"text\":\"text3\",\"selected\":true},{\"id\":4,\"text\":\"text4\"},{\"id\":5,\"text\":\"text5\"}]";
-        return s;
+    public List<ComobboText> getCCData() { //TODO 返回值为Json数组  [对象1,对象2]
+        ComobboText comobboText1 = new ComobboText("1", "选项1");
+        ComobboText comobboText2 = new ComobboText("2", "选项2");
+        ComobboText comobboText3 = new ComobboText("3", "选项3");
+//        String s = "[{\"id\":1,\"text\":\"text1\"},{\"id\":2,\"text\":\"text2\"},{\"id\":3,\"text\":\"text3\",\"selected\":true},{\"id\":4,\"text\":\"text4\"},{\"id\":5,\"text\":\"text5\"}]";
+        List<ComobboText> list = Lists.newArrayList(comobboText1,comobboText2,comobboText3);
+        return list;
     }
 
     @RequestMapping("getTreeData")
