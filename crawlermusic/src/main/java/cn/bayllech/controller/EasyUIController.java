@@ -23,6 +23,7 @@ import java.util.Map;
 public class EasyUIController {
 
     @RequestMapping("")  //todo 必须有值，即使为空也要加上"";如果为"/"，则请求地址需多个/;否则css,js等无法加载
+    // 冲突
     public String userList(){
         return "datagridCRUD";
     }
