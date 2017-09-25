@@ -2,16 +2,12 @@ package cn.bayllech.controller;
 
 import cn.bayllech.pojo.Song;
 import cn.bayllech.pojo.User;
-import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Lists;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @Author bei.qi
@@ -23,7 +19,7 @@ public class EasyUIController {
 
     @RequestMapping("/")
     public String userList(){
-        return "datagridCRUD";
+        return "easyUI/datagridCRUD";
     }
 
     @RequestMapping("/getUserList")
@@ -71,7 +67,7 @@ public class EasyUIController {
 
     @GetMapping("/easyui")
     public String easyui() {
-        return "easyUI";
+        return "easyUI/easyUI";
     }
 
     @RequestMapping("/data")
