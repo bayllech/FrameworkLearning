@@ -3,6 +3,7 @@ package cn.bayllech.controller;
 import cn.bayllech.pojo.ComobboText;
 import cn.bayllech.pojo.Song;
 import cn.bayllech.pojo.User;
+import com.google.common.collect.Lists;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -16,12 +17,14 @@ import java.util.List;
  * @Date 2017-09-18 10:02
  */
 @Controller
+@RequestMapping("/easyui")
 public class EasyUIController {
 
     @RequestMapping("")  //todo 必须有值，即使为空也要加上"";如果为"/"，则请求地址需多个/;否则css,js等无法加载
     public String userList(){
         return "easyUI/datagridCRUD";
     }
+/*
 
     @RequestMapping("/getUserList")
     @ResponseBody
@@ -32,17 +35,18 @@ public class EasyUIController {
         List<User> users = Arrays.asList(user1, user2, user3);
         return users;
     }
+*/
 
     @RequestMapping("getJson")
     @ResponseBody
     public ModelMap getJson() {  //todo 返回值为Json对象 {attribute对象1:[对象1，对象3],attribute对象2}
         ModelMap model = new ModelMap();
-        User user = new User(1,"李四", "大怪兽", "020-324325", "3242342@qq.com");
+      /*  User user = new User(1,"李四", "大怪兽", "020-324325", "3242342@qq.com");
         User user1 = new User(2,"张三", "小野猫", "020-324325", "3242342@qq.com");
         List<User> users = Lists.newArrayList(user, user1);
         model.addAttribute("users",users);
         User user3 = new User(3,"tom", "singleDog", "020-324325", "3242342@qq.com");
-        model.addAttribute("user", user3);
+        model.addAttribute("user", user3);*/
         return model;
     }
 

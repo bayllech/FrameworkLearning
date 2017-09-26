@@ -22,4 +22,46 @@
         <property name="password" value="${jdbc.password}" />
     </bean>
 
+    <!--mybatis配置-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!-- 自动扫描mapping.xml文件 -->
+        <property name="mapperLocations" value="classpath:/cn/bayllech/dao/mapper/*.xml" />
+        <property name="configuration">
+            <bean class="org.apache.ibatis.session.Configuration">
+                <property name="mapUnderscoreToCamelCase" value="true"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.bayllech.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
+
+    <!--shiro配置-->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="shiroDbRealm"/>
+        <property name="cacheManager" ref="cacheManager"/>
+    </bean>
+
+    <bean id="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager"/>
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+<!--    &lt;!&ndash;自定义的Roles Filter&ndash;&gt;
+    <bean id="customRolesFilter" class="com.kaishengit.shiro.CustomRolesFilter" />-->
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/login"/>
+        <property name="successUrl" value="/main"/>
+        <property name="unauthorizedUrl" value="/403"/>
+        <property name="filterChainDefinitions">
+            <value>
+                /resources/** == anon
+                /** == authc
+            </value>
+        </property>
+    </bean>
+
 </beans>
