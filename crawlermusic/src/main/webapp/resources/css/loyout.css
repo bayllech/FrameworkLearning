@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/* css Document */
+a{text-decoration: none;}
+
+/**********index********/
+.header{height:70px;background: #3cb5ec;width: 100%;}
+.logo{float: left;margin: 10px 0 0 40px;}
+.header_right{float: right;color: #fff;line-height: 70px;}
+.header_right div{float: left;}
+.header_right span{width: 2px;background: url("../images/header_line.png") repeat-y right top;display: inline-table;height: 40px;float: left;margin: 20px 10px 0 10px;}
+.header_right img{vertical-align: middle;}
+.header_right a{color: #fff;margin: 0 5px;}
+.header_right a:hover{color: #fff;text-decoration: underline;}
+
+.main{clear: both;width: 100%;}
+/*.left_menu{background: #fff;width: 235px;overflow-y:auto;overflow-x:hidden;float: left;margin-right: 20px;}*/
+.left_menu{background: #fff;width: 100%;float: left;margin-right: 0px;}
+.left_menu dl{margin-top: 0px;margin-bottom: 0px;}
+.left_menu dl dt{height: 50px;border-bottom: 1px solid #dedcdc;background: url("../images/menu_arrow_down.jpg") no-repeat 200px 23px;line-height: 50px;}
+.left_menu dl dt span{background: #f6f6f6;float: left;width: 60px;display: inline-block;height: 50px;font-size: 14px;}
+.left_menu dl dt span img{margin:16px 0 0 15px;}
+.left_menu dl dt a{float: left;color: #444;padding-left: 20px;font-size: 14px;}
+.left_menu dl dt em{background: url("http://lbp.lincomb.com/site/resources/img/logo_new.png") no-repeat;
+    width: 25px;
+    height: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+    display: block;
+    position: absolute;
+    margin-top: 2px;
+    font-size: 10px;
+    margin-left: 145px;
+    background-size: 100% 100%;
+    font-style: normal;
+    font-family: "宋体";
+    cursor: pointer;}
+.left_menu dl dd{display: none;}
+.left_menu dl dd a{display: block;line-height: 35px;height: 35px;text-align: center;color: #555;}
+.left_menu .show dt{background: url("../images/menu_arrow_up.jpg") no-repeat 200px 23px #3cb5ec;}
+.left_menu .show dt span{background: #31a5da;}
+.left_menu .show dt a{color: #fff;}
+.left_menu .show dd{display: block;border-bottom: 1px solid #dedcdc;}
+.left_menu .icon{position:relative;background: url("../images/menu_arrow_up.jpg") no-repeat 200px 23px #3cb5ec;}
+.left_menu .icon a{color: #fff;}
+.left_menu .icon span{background: #31a5da;}
+
+.menu_icon_cur{display: none;}
+.data_form{margin: 15px auto}
+.data_form div{margin: 5px auto}
+.data_form label{display: inline-block; vertical-align: top; width: 76px;text-align: right; overflow: visible}
+.data_form textarea{display: inline-block; resize: none}
+
+/** 调查样式  **/
+.radio_type{float: left;}
+.radio_type img{float: left;margin: 12px 5px 0 0;cursor: pointer;}
+.radio_type strong{float: left;width: 230px;}
+.radio_type b{font-size: 12px;color: #8e8d8d;float: left;font-weight: normal;margin-right: 110px;}
+.q_cr_text1{width:350px;height: 35px;border: 1px solid #ccc;text-indent: 5px;float: left;}
+.q_cr_textarea{width: 715px;height: 100px;border: 1px solid #ccc;resize: none;line-height: 25px;text-indent: 5px;}
+.checklist {list-style: none; margin: 0; padding: 0;}
+.wj_con ul li .checklist li { float: left; margin-right: 10px;clear: none;width: 240px;}
+.checklist li.selected .checkbox-select {display: none;}
+.checkbox-select { display: block; float: left; width: 18px; height: 40px; background: url(../images/check.jpg) no-repeat 0 10px;}
+.checklist li input { display: none; }
+a.checkbox-deselect {display: none;background: url("../images/check_cur.jpg") no-repeat 0 10px;width: 18px;height: 40px;}
+.checklist li.selected a.checkbox-deselect {display: block; width: 18px; height: 40px;float: left; }
+.checklist li strong{float: left;text-indent: 10px;}
+/*******select*******/
+.select_box{float:left;color:#444;position:relative;cursor:pointer; width:350px;height:35px;border:1px solid #ccc;}
+.selet_open{display:inline-block;border-left:solid 1px #ccc;position:absolute;right:0;top:0;width:35px;height:35px;}
+.wj_con .select_txt{display:inline-block;padding-left:10px;width:140px;line-height:35px;height:35px;cursor:text;color:#666;overflow:hidden;font-weight: normal;}
+.option{border:solid 1px #ccc;position:absolute;top:36px;left:-1px;z-index:999;overflow:hidden;display:none;border-top: none;width: 350px;background: #fff;}
+.option a{display:block;height:26px;line-height:26px;text-align:left;padding:0 10px;}
+.option a:hover{background: #f1f1f1;}
+.selet_open img{width:13px;height:8px;margin: 14px 0 0 13px;}
+
+.surv_table{margin:20px 10px 0 10px;}
+.surv_table table{width: 100%;border-left:1px solid #dddcdc;border-top:1px solid #dddcdc;}
+.surv_table table thead tr td{font-size: 14px;color: #444;background: #fcfcfc;}
+.surv_table table td{border-bottom: 1px solid #dddcdc;border-right:1px solid #dddcdc;height: 35px;line-height: 35px;padding-left:40px;color: #888;}

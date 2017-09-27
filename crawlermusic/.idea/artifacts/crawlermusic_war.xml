@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="crawlermusic:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="crawlermusic-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="crawlermusic:war exploded" />
-    </root>
-  </artifact>
-</component>
