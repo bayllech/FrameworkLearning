@@ -34,7 +34,7 @@ public class LoginController {
             subject.login(new UsernamePasswordToken(user.getUsername(),user.getPassword()));
             modelMap.addAttribute("code", "000000");
         } catch (AuthenticationException e) {
-            modelMap.addAttribute("msg", e.getMessage());
+            modelMap.addAttribute("msg", "账号或密码错误");
         }
 
         return new ModelAndView("jsonView", modelMap);
