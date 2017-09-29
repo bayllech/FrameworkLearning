@@ -20,7 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping
 public class LoginController {
 
-   @RequestMapping("")
+   @RequestMapping("login")
     public ModelAndView loginJsp() {
         return new ModelAndView("login");
     }
