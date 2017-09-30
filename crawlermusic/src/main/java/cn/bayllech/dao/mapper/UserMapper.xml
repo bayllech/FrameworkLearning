@@ -10,4 +10,20 @@
         SELECT r.role_name from t_user u LEFT JOIN t_user_role_relation urr ON u.id = urr.user_id
         LEFT JOIN t_role r ON urr.role_id = r.id WHERE u.username = #{username}
     </select>
+    <select id="selectBySelection" resultType="cn.bayllech.pojo.User">
+        SELECT * from t_user
+        <include refid="paramWhere"/>
+        limit #{start},#{pageSize}
+    </select>
+    <select id="findTotal" resultType="java.lang.Integer">
+        SELECT (1) FROM t_user
+        <include refid="paramWhere"/>
+    </select>
+
+    <sql id="paramWhere">
+        <where>
+            <if test="username != null">AND username = #{user.username}</if>
+            <if test="status != null">AND status = #{user.status}</if>
+        </where>
+    </sql>
 </mapper>

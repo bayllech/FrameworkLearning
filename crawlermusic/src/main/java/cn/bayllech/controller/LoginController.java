@@ -40,4 +40,16 @@ public class LoginController {
         return new ModelAndView("jsonView", modelMap);
     }
 
+    @RequestMapping("main")
+    public ModelAndView main() {
+        return new ModelAndView("common/main");
+    }
+
+    @RequestMapping("logout")
+    public ModelAndView logout() {
+       Subject subject = SecurityUtils.getSubject();
+       subject.logout();
+        return new ModelAndView("login");
+    }
+
 }

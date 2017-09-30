@@ -16,51 +16,7 @@
     <script type="text/javascript" src="${ctx}/resources/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="${ctx}/resources/js/jquery.cookie.js"></script>
     <link href="${ctx}/resources/css/login_style.css" rel="stylesheet" media="screen"/>
-
-    <script type="text/javascript">
-
-        // 登录页面若在框架内，则跳出框架
-        if (self != top) {
-            top.location = self.location;
-        }
-        ;
-
-
-        function  login () {
-            var pin = $.trim($("#user_pin").val());
-            var pwd = $.trim($("#user_pwd").val());
-            var imgCode = $.trim($("#captcha").val());
-            if (pwd == '' || pin == '') {
-                $("#msg").text('请完整输入登录账号、密码');
-                return false;
-            }
-            submit(pin, pwd);
-        }
-
-        function submit(pin, pwd) {
-            $("#msg").text('');
-            $.ajax({
-                url: "login",
-                type: "POST",
-                data: {
-                    username: pin,
-                    password: pwd,
-                },
-                dataType: "JSON",
-                success: function (data) {
-                    if (data.code == "000000") {
-                        window.location.href = "common/main";
-                    }else {
-                        $("#msg").text(data.msg);
-                    }
-                },
-                timeout: 15000,
-                error: function () {
-                    $("#msg").text('请检查网络连接是否正常！');
-                }
-            });
-        }
-    </script>
+</head>
 
 <body class="loginWeb" onkeydown="if(event.keyCode==13){login()}">
 <div id="main">
@@ -83,5 +39,49 @@
     </div>
 </div>
 
+<script type="text/javascript">
+
+    // 登录页面若在框架内，则跳出框架
+    if (self != top) {
+        top.location = self.location;
+    }
+    ;
+
+
+    function  login () {
+        var pin = $.trim($("#user_pin").val());
+        var pwd = $.trim($("#user_pwd").val());
+        var imgCode = $.trim($("#captcha").val());
+        if (pwd == '' || pin == '') {
+            $("#msg").text('请完整输入登录账号、密码');
+            return false;
+        }
+        submit(pin, pwd);
+    }
+
+    function submit(pin, pwd) {
+        $("#msg").text('');
+        $.ajax({
+            url: "login",
+            type: "POST",
+            data: {
+                username: pin,
+                password: pwd,
+            },
+            dataType: "JSON",
+            success: function (data) {
+                if (data.code == "000000") {
+                    window.location.href = "/main";
+                }else {
+                    $("#msg").text(data.msg);
+                }
+            },
+            timeout: 15000,
+            error: function () {
+                $("#msg").text('请检查网络连接是否正常！');
+            }
+        });
+    }
+</script>
 </body>
 </html>

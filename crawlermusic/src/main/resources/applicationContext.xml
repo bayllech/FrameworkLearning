@@ -69,7 +69,7 @@
                 <!--anon 表示匿名访问，不需要认证以及授权-->
                 /resources/**=anon
                 <!--authc表示需要认证 没有进行身份认证是不能进行访问的-->
-                /easyui*=authc
+                /**=authc
             </value>
         </property>
     </bean>
