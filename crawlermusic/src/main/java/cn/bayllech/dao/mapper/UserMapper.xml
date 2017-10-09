@@ -7,7 +7,7 @@
         SELECT * FROM t_user where username = #{username}
     </select>
     <select id="findRoles" resultType="java.lang.String">
-        SELECT r.role_name from t_user u LEFT JOIN t_user_role_relation urr ON u.id = urr.user_id
+        SELECT r.role_code from t_user u LEFT JOIN t_user_role_relation urr ON u.id = urr.user_id
         LEFT JOIN t_role r ON urr.role_id = r.id WHERE u.username = #{username}
     </select>
     <select id="selectBySelection" resultType="cn.bayllech.pojo.User">
@@ -18,6 +18,14 @@
     <select id="findTotal" resultType="java.lang.Integer">
         SELECT COUNT(1) FROM t_user
         <include refid="paramWhere"/>
+    </select>
+    <select id="findPermissions" resultType="java.lang.String">
+         SELECT p.permission_code from t_user u
+         LEFT JOIN t_user_role_relation urr ON u.id = urr.user_id
+         LEFT JOIN t_role r ON urr.role_id = r.id
+         LEFT JOIN t_role_permission_relation rpr ON r.id = rpr.role_id
+         LEFT JOIN t_permission p ON rpr.permission_id = p.id
+         WHERE u.username = #{username}
     </select>
 
     <sql id="paramWhere">

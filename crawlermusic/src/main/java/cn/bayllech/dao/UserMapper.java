@@ -20,4 +20,6 @@ public interface UserMapper {
     List<User> selectBySelection(@Param("user") User user, @Param("start") Integer start, @Param("pageSize") Integer pageSize);
 
     int findTotal(@Param("user") User user);
+
+    Set<String> findPermissions(String username);
 }

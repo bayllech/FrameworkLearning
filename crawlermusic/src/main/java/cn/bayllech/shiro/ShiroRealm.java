@@ -29,12 +29,14 @@ public class ShiroRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        String username = principalCollection.getPrimaryPrincipal().toString() ;
+//        String username = principalCollection.getPrimaryPrincipal().toString() ;
+        User user = (User)principalCollection.getPrimaryPrincipal();
+        String username = user.getUsername();
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo() ;
         Set<String> roleName = userMapper.findRoles(username) ;
-//        Set<String> permissions = userMapper.findPermissions(username) ;
+        Set<String> permissions = userMapper.findPermissions(username) ;
         info.setRoles(roleName);
-//        info.setStringPermissions(permissions);
+        info.setStringPermissions(permissions);
         return info;
     }
 
@@ -58,9 +60,7 @@ public class ShiroRealm extends AuthorizingRealm {
 
        /* if (user != null){
             //将查询到的用户账号和密码存放到 authenticationInfo用于后面的权限判断。第三个参数随便放一个就行了。
-            AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(),
-                    "a") ;
-            return authenticationInfo ;
+           return new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(),getName());
         }else{
             return  null ;
         }*/

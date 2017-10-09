@@ -69,7 +69,7 @@
     function newUser(){
         $('#dlg').dialog('open').dialog('setTitle','新增用户');
         $('#fm').form('clear');
-        url = '/saveUser';
+        url = '/easyui/saveUser';
     }
     function saveUser(){
         $('#fm').form('submit',{
@@ -87,6 +87,7 @@
                 } else {
                     $('#dlg').dialog('close');		// close the dialog
                     $('#dg').datagrid('reload');	// reload the user data
+                    alert("添加成功 ");
                 }
             }
         });
@@ -96,7 +97,7 @@
         if (row){
             $.messager.confirm('Confirm','确定要删除该用户?',function(r){
                 if (r){
-                    $.post('/destroyUser',{id:row.id},function(result){
+                    $.post('destroyUser',{id:row.id},function(result){
                         if (result.success){
                             $('#dg').datagrid('reload');	// reload the user data
                         } else {

@@ -1,7 +1,6 @@
 package cn.bayllech.controller;
 
 import cn.bayllech.pojo.Role;
-import cn.bayllech.pojo.User;
 import cn.bayllech.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
