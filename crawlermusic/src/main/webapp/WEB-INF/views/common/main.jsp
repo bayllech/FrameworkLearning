@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%
     request.setAttribute("ctx", request.getContextPath());
 %>
@@ -55,9 +56,11 @@
                         <a href="javaScript:;">系统管理</a>
                     </dt>
 
-                        <dd>
-                            <a href="javaScript:;" onclick="addTabIframe('${ctx}/user/showUserList','用户管理')">用户管理</a>
-                        </dd>
+                        <shiro:hasRole name="admin">
+                            <dd>
+                                <a href="javaScript:;" onclick="addTabIframe('${ctx}/user/showUserList','用户管理')">用户管理</a>
+                            </dd>
+                        </shiro:hasRole>
 
                         <dd>
                             <a href="javaScript:;" onclick="addTabIframe('${ctx}/role/showRoleList','角色管理')">角色管理</a>
