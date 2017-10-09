@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public List<User> findByPage(String username, String start, String pageSize) {
+    public List<User> findByPage(String username, Integer start, Integer pageSize) {
         User user = new User();
         user.setUsername(username);
         return userMapper.selectBySelection(user,start,pageSize);

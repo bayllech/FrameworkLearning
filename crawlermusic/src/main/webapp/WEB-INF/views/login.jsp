@@ -27,11 +27,11 @@
             <span id="msg" style="color:red;">${msg} </span><br/>
             <dl>
                 <dt>账号</dt>
-                <dd><input type="text" id="user_pin" value="admin" name="pin"/></dd>
+                <dd><input type="text" id="user_pin" value="tom" name="pin"/></dd>
             </dl>
             <dl>
                 <dt>密码</dt>
-                <dd><input type="password" id="user_pwd" value="123456" name="password"/></dd>
+                <dd><input type="password" id="user_pwd" value="123123" name="password"/></dd>
             </dl>
         </div>
         <input type="button" id="user_login_but" class="login_but"  onclick="login()" value="立即登录"/>
@@ -66,7 +66,7 @@
             type: "POST",
             data: {
                 username: pin,
-                password: pwd,
+                password: pwd
             },
             dataType: "JSON",
             success: function (data) {
@@ -76,7 +76,7 @@
                     $("#msg").text(data.msg);
                 }
             },
-            timeout: 15000,
+            timeout: 30000,
             error: function () {
                 $("#msg").text('请检查网络连接是否正常！');
             }

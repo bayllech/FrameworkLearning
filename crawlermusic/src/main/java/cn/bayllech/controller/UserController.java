@@ -29,10 +29,10 @@ public class UserController {
     }
 
     @RequestMapping("getUserList")
-    public ModelAndView getUserList(String username, String rows, String page) {
+    public ModelAndView getUserList(String username, Integer rows, Integer page) {
         ModelMap modelMap = new ModelMap();
         int total = userService.findTotal(username);
-        List<User> list = userService.findByPage(username,rows,page);
+        List<User> list = userService.findByPage(username,(page-1)*rows,rows);
         modelMap.addAttribute("total", total);
         modelMap.addAttribute("rows", list);
         return new ModelAndView("jsonView", modelMap);

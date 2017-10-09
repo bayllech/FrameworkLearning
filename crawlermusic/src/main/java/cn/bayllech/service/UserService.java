@@ -10,7 +10,7 @@ import java.util.List;
  * @Date 2017-09-30 16:42
  */
 public interface UserService {
-    List<User> findByPage(String username, String start, String pageSize);
+    List<User> findByPage(String username, Integer start, Integer pageSize);
 
     int findTotal(String username);
 }

@@ -1,6 +1,7 @@
 package cn.bayllech.dao;
 
 import cn.bayllech.pojo.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Set;
@@ -16,7 +17,7 @@ public interface UserMapper {
 
     Set<String> findRoles(String username);
 
-    List<User> selectBySelection(User user,String start,String pageSize);
+    List<User> selectBySelection(@Param("user") User user, @Param("start") Integer start, @Param("pageSize") Integer pageSize);
 
-    int findTotal(User user);
+    int findTotal(@Param("user") User user);
 }

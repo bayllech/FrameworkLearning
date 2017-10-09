@@ -16,14 +16,16 @@
         limit #{start},#{pageSize}
     </select>
     <select id="findTotal" resultType="java.lang.Integer">
-        SELECT (1) FROM t_user
+        SELECT COUNT(1) FROM t_user
         <include refid="paramWhere"/>
     </select>
 
     <sql id="paramWhere">
         <where>
-            <if test="username != null">AND username = #{user.username}</if>
-            <if test="status != null">AND status = #{user.status}</if>
+           <if test="user != null">
+               <if test="user.username != null">AND username = #{user.username}</if>
+               <if test="user.status != null">AND status = #{user.status}</if>
+           </if>
         </where>
     </sql>
 </mapper>
