@@ -40,29 +40,34 @@
     </bean>
 
      <!--配置自定义Realm -->
-    <bean id="shiroRealm" class="cn.bayllech.shiro.MyCasRealm">
+   <!-- <bean id="shiroRealm" class="cn.bayllech.shiro.MyCasRealm">
         <property name="cachingEnabled" value="true"/>
         <property name="authenticationCachingEnabled" value="true"/>
         <property name="authenticationCacheName" value="authenticationCache"/>
         <property name="authorizationCachingEnabled" value="true"/>
         <property name="authorizationCacheName" value="authorizationCache"/>
-        <!--CAS Server 地址-->
+        &lt;!&ndash;CAS Server 地址&ndash;&gt;
         <property name="casServerUrlPrefix" value="http://localhost:8080"/>
-        <!--当前应用CAS服务URL，即用于接收并处理登录成功后的Ticket-->
+        &lt;!&ndash;当前应用CAS服务URL，即用于接收并处理登录成功后的Ticket&ndash;&gt;
         <property name="casService" value="http://localhost:8081/welcome"/>
-    </bean>
+    </bean>-->
 
-    <bean id="casFilter" class="org.apache.shiro.cas.CasFilter">
+    <!--<bean id="casFilter" class="org.apache.shiro.cas.CasFilter">
         <property name="failureUrl" value="/unauthorized"/>
-    </bean>
+    </bean>-->
 
-    <bean id="casSubjectFactory" class="org.apache.shiro.cas.CasSubjectFactory"/>
+    <!--<bean id="casSubjectFactory" class="org.apache.shiro.cas.CasSubjectFactory"/>-->
     <!-- 安全管理器 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="shiroRealm"/>
         <!-- 设置 securityManager 安全管理器的 rememberMeManager -->
-        <property name="rememberMeManager" ref="rememberMeManager"/>
-        <property name="subjectFactory" ref="casSubjectFactory"/>
+        <!--<property name="rememberMeManager" ref="rememberMeManager"/>-->
+        <!--<property name="subjectFactory" ref="casSubjectFactory"/>-->
+        <property name="cacheManager" ref="cacheManager"/>
+        <!--<property name="sessionManager" ref="sessionManager"/>-->
+    </bean>
+    <bean id="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager"/>
+    <bean id="sessionManager" class="org.apache.shiro.session.mgt.DefaultSessionManager">
     </bean>
     <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
@@ -74,32 +79,32 @@
     </bean>
 
     <!-- 会话 Cookie 模板 -->
-    <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+   <!-- <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
         <constructor-arg value="sid"/>
         <property name="httpOnly" value="true"/>
         <property name="maxAge" value="-1"/>
-        <!-- sessionIdCookie：maxAge=-1 表示浏览器关闭时失效此 Cookie； -->
+        &lt;!&ndash; sessionIdCookie：maxAge=-1 表示浏览器关闭时失效此 Cookie； &ndash;&gt;
     </bean>
     <bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
         <constructor-arg value="rememberMe"/>
         <property name="httpOnly" value="true"/>
         <property name="maxAge" value="2592000"/>
-        <!--30 天，rememberMeCookie即记住我的 Cookie，保存时长 30 天； -->
+        &lt;!&ndash;30 天，rememberMeCookie即记住我的 Cookie，保存时长 30 天； &ndash;&gt;
     </bean>
-    <!-- rememberMe 管理器  -->
+    &lt;!&ndash; rememberMe 管理器  &ndash;&gt;
     <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
-        <!-- cipherKey 是加密 rememberMe Cookie 的密钥；默认 AES 算法 -->
+        &lt;!&ndash; cipherKey 是加密 rememberMe Cookie 的密钥；默认 AES 算法 &ndash;&gt;
         <property name="cipherKey" value="#{T(org.apache.shiro.codec.Base64).decode('4AvVhmFLUs0KTA3Kprsdag==' )}"/>
         <property name="cookie" ref="rememberMeCookie"/>
-    </bean>
+    </bean>-->
 
     <!-- Shiro过滤器 核心-->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
-        <property name="filters">
+       <!-- <property name="filters">
             <util:map>
                 <entry key="cas" value-ref="casFilter"/>
             </util:map>
-        </property>
+        </property>-->
         <!-- Shiro的核心安全接口,这个属性是必须的 -->
         <property name="securityManager" ref="securityManager"/>
         <!-- 身份认证失败，则跳转到登录页面的配置 -->

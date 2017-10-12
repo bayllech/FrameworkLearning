@@ -22,7 +22,7 @@
 <div id="main">
     <div class="login_box">
 
-        <h1>联璧港运营管理系统</h1>
+        <h1>登录</h1>
         <div class="login">
             <span id="msg" style="color:red;">${msg} </span><br/>
             <dl>
