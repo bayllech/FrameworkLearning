@@ -24,6 +24,12 @@
                 userId="root"
                 password="rootroot">
         </jdbcConnection>
+        <!--<jdbcConnection
+                driverClass="${jdbc.driver}"
+                connectionURL="${jdbc.url}"
+                userId="${jdbc.username}"
+                password="${jdbc.password}">
+        </jdbcConnection>-->
 
 
         <!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制 -->
