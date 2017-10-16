@@ -1,5 +1,6 @@
 package cn.bayllech.dao;
 
+import cn.bayllech.pojo.TUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -27,6 +28,11 @@ public class TUserMapperTest {
 
     @Test
     public void insert() throws Exception {
+        TUser tUser = new TUser();
+        tUser.setUsername("小刘");
+        tUser.setPassword("890890");
+        tUser.setStatus(1);
+        tUserMapper.insertSelective(tUser);
     }
 
     @Test
