@@ -1,6 +1,9 @@
 package cn.bayllech.pojo;
 
-public class TUser {
+import java.io.Serializable;
+
+public class TUser implements Serializable {
+    private static final long serialVersionUID = -1838938940742020910L;
     private Integer id;
 
     private String username;

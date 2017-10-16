@@ -1,4 +1,4 @@
-package cn.bayllech.mapper;
+package cn.bayllech.dao;
 
 import cn.bayllech.pojo.TUser;
 

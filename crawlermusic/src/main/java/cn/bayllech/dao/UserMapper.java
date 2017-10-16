@@ -12,7 +12,7 @@ import java.util.Set;
  * @Description
  * @Date 2017-09-27 15:13
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper{
 
     User findByUsername(String username);
 
