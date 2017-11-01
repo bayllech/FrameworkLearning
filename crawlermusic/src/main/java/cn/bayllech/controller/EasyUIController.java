@@ -1,8 +1,9 @@
 package cn.bayllech.controller;
 
 import cn.bayllech.pojo.ComobboText;
+import cn.bayllech.pojo.Role;
 import cn.bayllech.pojo.Song;
-import cn.bayllech.pojo.User;
+import cn.bayllech.pojo.TUser;
 import com.google.common.collect.Lists;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,6 +25,17 @@ public class EasyUIController {
     public String userList(){
         return "easyUI/datagridCRUD";
     }
+
+    @RequestMapping("/multiClass")
+    @ResponseBody
+    public ModelMap multiClass(TUser user, Role role) {
+        ModelMap modelMap = new ModelMap();
+        modelMap.addAttribute(user);
+        modelMap.addAttribute(role);
+        return modelMap;
+    }
+
+
 
    /* @RequestMapping("/getUserList")
     @ResponseBody
