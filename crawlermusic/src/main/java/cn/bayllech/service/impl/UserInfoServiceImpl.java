@@ -25,4 +25,31 @@ public class UserInfoServiceImpl implements UserInfoService {
         
         return userInfoMapper.selectByExample(new TUserInfoExample());
     }
+    
+    @Override
+    public List<TUserInfo> selectByPage(Integer offset, Integer limit,String sortName,String sortOrder) {
+        TUserInfoExample userInfoExample = new TUserInfoExample();
+        userInfoExample.setOffset(offset);
+        userInfoExample.setLimit(limit);
+        userInfoExample.setOrderByClause(sortName + " " + sortOrder);
+        
+        return userInfoMapper.selectByExample(userInfoExample);
+    }
+    
+    @Override
+    public Long selectTotal(Integer offset, Integer limit) {
+        TUserInfoExample userInfoExample = new TUserInfoExample();
+    
+        return userInfoMapper.countByExample(userInfoExample);
+    }
+    
+    @Override
+    public List<TUserInfo> selectByExample(TUserInfoExample userInfoExample) {
+        return userInfoMapper.selectByExample(userInfoExample);
+    }
+    
+    @Override
+    public Long selectTotal(TUserInfoExample userInfoExample) {
+        return userInfoMapper.countByExample(userInfoExample);
+    }
 }
