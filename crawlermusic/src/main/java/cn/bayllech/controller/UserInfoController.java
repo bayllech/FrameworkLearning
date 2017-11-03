@@ -99,5 +99,6 @@ public class UserInfoController {
         
         return new ModelAndView("jsonView", model);
     }
+    //remote修改
     //本地 修改
 }
