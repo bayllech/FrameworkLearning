@@ -20,4 +20,10 @@ public interface UserInfoService {
     List<TUserInfo> selectByExample(TUserInfoExample userInfoExample);
     
     Long selectTotal(TUserInfoExample userInfoExample);
+    
+    void addUser(TUserInfo userInfo);
+    
+    void toEdit(TUserInfo userInfo);
+    
+    void del(Integer id);
 }

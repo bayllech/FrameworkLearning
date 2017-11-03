@@ -68,8 +68,8 @@
                 <h4 class="modal-title">新增</h4>
             </div>
             <div class="modal-body">
-               <div class="form-horizontal">
-
+               <form class="form-horizontal">
+                   <input type="hidden"  class="form-control" name="id" id="id" >
                    <div class="form-group">
                        <label class="col-sm-2 control-label">姓名</label>
                        <div class="col-sm-6">
@@ -79,7 +79,7 @@
 
                    <div class="form-group">
                        <label class="col-sm-2 control-label">性别</label>
-                       <div class="col-sm-6">
+                       <div class="col-sm-4">
                            <select name="sex" id="sex" class="form-control">
                                <option value="1">男</option>
                                <option value="2">女</option>
@@ -87,22 +87,102 @@
                        </div>
                    </div>
 
-               </div>
+                   <div class="form-group">
+                       <label class="col-sm-2 control-label">民族</label>
+                       <div class="col-sm-2">
+                           <input type="text" class="form-control" name="native" id="native" >
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       <label class="col-sm-2 control-label">年龄</label>
+                       <div class="col-sm-2">
+                           <input type="number" class="form-control" name="age" id="age" min="0" max="150" >
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       <label class="col-sm-2 control-label">地址</label>
+                       <div class="col-sm-6">
+                           <input type="text" class="form-control" name="address" id="address" >
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       <label class="col-sm-2 control-label">Email</label>
+                       <div class="col-sm-6">
+                           <input type="email" class="form-control" name="email" id="email" >
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       <label class="col-sm-2 control-label">电话</label>
+                       <div class="col-sm-6">
+                           <input type="tel" class="form-control" name="tel" id="tel"  maxlength="14">
+                       </div>
+                   </div>
+
+               </form>
 
 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary">保存</button>
+                <button type="button" class="btn btn-primary" id="saveBtn">保存</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
 
+<%--<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="/resources/images/header_icon1.jpg" alt="...">
+            <div class="carousel-caption">
+                <h3>第一张</h3>
+                <p>描述</p>
+            </div>
+        </div>
+        <div class="item active">
+            <img src="/resources/images/header_icon2.jpg.jpg" alt="...">
+            <div class="carousel-caption">
+                <h3>第二张</h3>
+                <p>描述</p>
+            </div>
+        </div>
+        <div class="item active">
+            <img src="/resources/images/header_icon3.jpg.jpg.jpg" alt="...">
+            <div class="carousel-caption">
+                <h3>第三张</h3>
+                <p>描述</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>--%>
+
+
 </body>
 
-<script>
+<script type="text/javascript">
 
     $('#tb_departments').bootstrapTable({
         url: '/info/info.json',         //请求后台的URL（*）
@@ -193,12 +273,109 @@
     });
 
 
+    //搜索页码重设
     $(function () {
         $("#btn_search").click(function () {
             $('#tb_departments').bootstrapTable("refreshOptions", {p: 1, pageSize: 10})
         })
     });
 
+    //清除弹窗原数据
+    $("#addModal").on("hidden.bs.modal", function() {
+        $(".form-horizontal")[0].reset();
+    });
+
+    //提交表单
+    $("#saveBtn").click(function () {
+        var $id = $("#id").val();
+        var $name = $("#name").val();
+        var $sex = $("#sex").val();
+        var $nation = $("#native").val();
+        var $age = $("#age").val();
+        var $address = $("#address").val();
+        var $email = $("#email").val();
+        var $tel = $("#tel").val();
+
+        var url = "";
+
+        if (!$name) {
+            alert("姓名不能为空");
+            return false;
+        }
+
+        if (!$id) {
+            url = "/info/toAdd";
+        } else {
+            url = "/info/toEdit"
+        }
+
+        $.ajax({
+            url: url,
+            type: "post",
+            dataType: "json",
+            data:{
+                "id":$id,
+                "name":$name,
+                "sex":$sex,
+                "nation":$nation,
+                "age":$age,
+                "addredd":$address,
+                "email":$email,
+                "tel":$tel
+            },
+            success: function (data) {
+                alert("添加成功");
+                $(".modal").modal('hide');
+                $('#tb_departments').bootstrapTable("refresh");
+            },
+            error: function () {
+            }
+        });
+
+
+    });
+
+
+    function edit(id) {
+        $.ajax({
+            url: "/info/getUser",
+            type: "post",
+            dataType: "JSON",
+            data: {"id": id},
+            success: function (data) {
+//                $(".form-horizontal")[0].reset();
+                $("#id").val(data.userInfo.id);
+                $("#name").val(data.userInfo.name);
+                $("#sex").val(data.userInfo.sex);
+                $("#native").val(data.userInfo.nation);
+                $("#age").val(data.userInfo.age);
+                $("#address").val(data.userInfo.addredd);
+                $("#email").val(data.userInfo.email);
+                $("#tel").val(data.userInfo.tel);
+
+                $(".modal").modal('show');
+            },
+            error: function () {
+            }
+        });
+    }
+
+
+    function del(id) {
+        if (confirm("确定删除？")) {
+            $.ajax({
+                url: "/info/del",
+                type: "post",
+                dataType: "json",
+                data: {"id": id},
+                success: function (data) {
+                    $('#tb_departments').bootstrapTable("refresh");
+                },
+                error: function () {
+                }
+            });
+        }
+    }
 
     /*    $(document).ready(function() {
             $('#tb_departments').DataTable( {

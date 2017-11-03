@@ -63,4 +63,41 @@ public class UserInfoController {
         
         return new ModelAndView("jsonView", model);
     }
+    
+    @RequestMapping("/toAdd")
+    public ModelAndView toAdd(TUserInfo userInfo) {
+        ModelMap model = new ModelMap();
+        userInfoService.addUser(userInfo);
+        
+    
+        return new ModelAndView("jsonView", model);
+    }
+    
+    @RequestMapping("/getUser")
+    public ModelAndView getUser(Integer id) {
+        ModelMap model = new ModelMap();
+        TUserInfoExample userInfoExample = new TUserInfoExample();
+        userInfoExample.createCriteria().andIdEqualTo(id);
+        model.addAttribute("userInfo", userInfoService.selectByExample(userInfoExample).get(0));
+        
+        
+        return new ModelAndView("jsonView", model);
+    }
+    
+    @RequestMapping("/toEdit")
+    public ModelAndView toEdit(TUserInfo userInfo) {
+        ModelMap model = new ModelMap();
+        userInfoService.toEdit(userInfo);
+        
+        return new ModelAndView("jsonView", model);
+    }
+    
+    @RequestMapping("/del")
+    public ModelAndView del(Integer id) {
+        ModelMap model = new ModelMap();
+        userInfoService.del(id);
+        
+        return new ModelAndView("jsonView", model);
+    }
+    
 }

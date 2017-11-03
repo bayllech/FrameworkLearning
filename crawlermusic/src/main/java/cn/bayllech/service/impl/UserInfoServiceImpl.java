@@ -52,4 +52,23 @@ public class UserInfoServiceImpl implements UserInfoService {
     public Long selectTotal(TUserInfoExample userInfoExample) {
         return userInfoMapper.countByExample(userInfoExample);
     }
+    
+    @Override
+    public void addUser(TUserInfo userInfo) {
+        userInfoMapper.insertSelective(userInfo);
+    }
+    
+    @Override
+    public void toEdit(TUserInfo userInfo) {
+        TUserInfoExample userInfoExample = new TUserInfoExample();
+        userInfoExample.createCriteria().andIdEqualTo(userInfo.getId());
+        userInfoMapper.updateByExample(userInfo, userInfoExample);
+        
+    }
+    
+    @Override
+    public void del(Integer id) {
+        userInfoMapper.deleteByPrimaryKey(id);
+        
+    }
 }
