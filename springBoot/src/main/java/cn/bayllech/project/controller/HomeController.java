@@ -3,7 +3,6 @@ package cn.bayllech.project.controller;
 import cn.bayllech.project.pojo.DUser;
 import cn.bayllech.project.pojo.TUserInfo;
 import cn.bayllech.project.service.DUserService;
-import cn.bayllech.project.service.TUserInfoService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,7 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    @Autowired
+   /* @Autowired
     private TUserInfoService tuserInfoService;
     @Autowired
     private DUserService dUserService;
@@ -40,29 +39,29 @@ public class HomeController {
 
     @RequestMapping("/jsp")
     public String vieJsp(ModelMap model) {
-        /*model.addAttribute("code", "000000");
-        model.addAttribute("msg", "成功");*/
+        *//*model.addAttribute("code", "000000");
+        model.addAttribute("msg", "成功");*//*
         model.addAttribute("msg", "success");
         return "index";
-    }
+    }*/
 
-    @RequestMapping(value = "/user")
+    /*@RequestMapping(value = "/user")
     @ResponseBody
     public List<TUserInfo> userInfo() {
         List<TUserInfo> userList = tuserInfoService.findAllUser();
         return userList;
-    }
+    }*/
 
-    @RequestMapping(value = "/userList")
+    /*@RequestMapping(value = "/userList")
     @ResponseBody
     public ModelMap userInfoList() {
         ModelMap model = new ModelMap();
         List<TUserInfo> userList = tuserInfoService.findAllUser();
         model.addAttribute("userList", userList);
         return model;
-    }
+    }*/
 
-    @RequestMapping("/duser")
+   /* @RequestMapping("/duser")
     @ResponseBody
     public ModelMap dubboUser(HttpServletRequest request) {
         String ip1 = request.getHeader("x-forwarded-for");
@@ -77,6 +76,6 @@ public class HomeController {
 //        return gson.toJson(userList);
         modelMap.addAttribute("userList", userList);
         return modelMap;
-    }
+    }*/
 
 }

@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ImportResource;
 import java.io.IOException;
 
 @SpringBootApplication
-@ImportResource({"classpath:dubbo.xml"})
+//@ImportResource({"classpath:dubbo.xml"})
 public class ProjectApplication extends SpringBootServletInitializer{
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
