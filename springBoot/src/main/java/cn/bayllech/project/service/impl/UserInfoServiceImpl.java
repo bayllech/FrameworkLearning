@@ -4,8 +4,9 @@ import cn.bayllech.project.mapper.UserInfoMapper;
 import cn.bayllech.project.pojo.TUserInfo;
 import cn.bayllech.project.pojo.TUserInfoExample;
 import cn.bayllech.project.service.UserInfoService;
+import com.alibaba.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -14,7 +15,8 @@ import java.util.List;
  * @Description
  * @Date 2017-11-01 10:30
  */
-@Service
+@Component
+@Service(interfaceClass = UserInfoService.class)
 public class UserInfoServiceImpl implements UserInfoService {
     
     @Autowired
