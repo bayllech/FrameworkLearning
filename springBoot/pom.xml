@@ -78,17 +78,46 @@
 			<artifactId>gson</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>dubbo</artifactId>
-			<version>2.5.3</version>
-			<exclusions>
-				<exclusion>
-				<artifactId>spring</artifactId>
-				<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+		<!--dubbo-->
+		<!--<dependency>-->
+			<!--<groupId>com.alibaba</groupId>-->
+			<!--<artifactId>dubbo</artifactId>-->
+			<!--<version>2.5.3</version>-->
+			<!--<exclusions>-->
+				<!--<exclusion>-->
+				<!--<artifactId>spring</artifactId>-->
+				<!--<groupId>org.springframework</groupId>-->
+				<!--</exclusion>-->
+			<!--</exclusions>-->
+		<!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>spring-boot-starter-dubbo</artifactId>-->
+            <!--<version>1.0.0-SNAPSHOT</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.zookeeper</groupId>-->
+            <!--<artifactId>zookeeper</artifactId>-->
+            <!--<version>3.4.6</version>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.slf4j</groupId>-->
+                    <!--<artifactId>slf4j-log4j12</artifactId>-->
+                <!--</exclusion>-->
+                <!--<exclusion>-->
+                    <!--<groupId>log4j</groupId>-->
+                    <!--<artifactId>log4j</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
+        <!-- zookeeper 第三方操作工具类 -->
+        <!--<dependency>-->
+            <!--<groupId>com.101tec</groupId>-->
+            <!--<artifactId>zkclient</artifactId>-->
+            <!--<version>0.6</version>-->
+        <!--</dependency>-->
+
+        <!--dubbo start-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>spring-boot-starter-dubbo</artifactId>
@@ -97,23 +126,12 @@
         <dependency>
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
-            <version>3.4.6</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
-                </exclusion>
-            </exclusions>
+            <version>3.4.10</version>
         </dependency>
-        <!-- zookeeper 第三方操作工具类 -->
         <dependency>
-            <groupId>com.101tec</groupId>
+            <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
-            <version>0.6</version>
+            <version>0.1</version>
         </dependency>
 
 		<dependency>
