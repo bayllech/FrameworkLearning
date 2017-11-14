@@ -15,11 +15,12 @@
 
 
     <dubbo:application name="dubbo-consumer"/>
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
-    <!--<dubbo:protocol name="dubbo" port="20880"/>-->
+    <dubbo:registry protocol="zookeeper" address="aliyun:2181"/>
+    <dubbo:protocol port="20880"/>
+<!--    <dubbo:registry protocol="zookeeper" address="zookeeper://localhost:2181"/>
+    <dubbo:protocol name="dubbo" port="20880"/>-->
 
-
-    <dubbo:reference interface="cn.bayllech.service.UserInfoService" id="userInfoServiceImpl"/>
+    <dubbo:reference interface="cn.bayllech.service.UserInfoService" id="userInfoServiceImpl" check="false" timeout="20000" retries="0"/>
 
 
 
