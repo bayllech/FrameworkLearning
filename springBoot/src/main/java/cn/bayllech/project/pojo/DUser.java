@@ -1,6 +1,5 @@
 package cn.bayllech.project.pojo;
 
-import javassist.SerialVersionUID;
 import lombok.Data;
 
 import java.io.Serializable;

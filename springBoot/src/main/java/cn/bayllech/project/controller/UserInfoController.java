@@ -1,4 +1,3 @@
-/*
 package cn.bayllech.project.controller;
 
 import cn.bayllech.project.pojo.TUserInfo;
@@ -6,22 +5,14 @@ import cn.bayllech.project.pojo.TUserInfoExample;
 import cn.bayllech.project.service.UserInfoService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-
-*/
-/**
- * @Author bei.qi
- * @Description
- * @Date 2017-11-01 10:29
- *//*
+ 
 
 @RestController
 @RequestMapping("/info")
@@ -30,7 +21,7 @@ public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
     
-    @RequestMapping("")
+    @RequestMapping("1")
     public ModelAndView infoView() {
         return new ModelAndView("user/userInfoList");
     }
@@ -40,14 +31,8 @@ public class UserInfoController {
     public ModelMap info(Integer p, Integer pageSize, String sortName, String sortOrder,
                              @RequestParam(required = false) String name,
                              @RequestParam(required = false) Integer sex) {
-        //String draw = request.getParameter("draw");
         ModelMap model = new ModelMap();
-*/
-/*        model.addAttribute("recordsTotal", 100);
-        model.addAttribute("recordsFiltered", 100);
-        model.addAttribute("draw", draw);*//*
-
-        //model.addAttribute("data",userInfoService.selectAll());
+       
         TUserInfoExample userInfoExample = new TUserInfoExample();
         if (StringUtils.isNotBlank(name)) {
             userInfoExample.createCriteria().andNameLike("%" + name + "%");
@@ -109,4 +94,3 @@ public class UserInfoController {
     //remote修改
     //本地 修改
 }
-*/
