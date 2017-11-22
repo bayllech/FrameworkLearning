@@ -1,0 +1,43 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html lang="zh-CN"
+	  xmlns="http://www.w3.org/1999/xhtml"
+>
+<title>learn Resources</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+
+<form class="form form-group">
+	username:<input type="text" id="username">
+	password:<input type="password" id="password">
+</form>
+
+<button id="doLogin" class="btn btn-info" type="button">登录</button>
+
+
+</body>
+<script type="text/javascript">
+		$("#doLogin").click(function (even) {
+			$.ajax({
+				type : "POST",
+				url : "/leaf/login",
+				data : {
+					"username" : $("#username").val(),
+					"password" : $("#password").val()
+				},
+				dataType : "json",
+				success : function(data) {
+					if (data.result == "1") {
+						window.location.href ="/leaf/list";
+					} else {
+						alert("账号密码不能为空！");
+					}
+				}
+			});
+		});
+</script>
+</html>

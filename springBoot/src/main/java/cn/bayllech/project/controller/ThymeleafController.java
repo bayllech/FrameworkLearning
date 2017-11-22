@@ -4,14 +4,20 @@ import cn.bayllech.project.eto.ConfigProperties;
 import cn.bayllech.project.eto.ConsumerConfig;
 import cn.bayllech.project.eto.RandomNum;
 import cn.bayllech.project.pojo.LearnResouce;
+import cn.bayllech.project.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author bei.qi
@@ -35,6 +41,21 @@ public class ThymeleafController {
     public String domain() {
         //return consumerConfig.getDomain() + ":" + consumerConfig.getPort();
         return configProperties.getAppname() + ":" + configProperties.getProtocol();
+    }
+    
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public Map<String,Object> login(HttpServletRequest request, HttpServletResponse response){
+        Map<String,Object> map =new HashMap<String,Object>();
+        String userName=request.getParameter("username");
+        String password=request.getParameter("password");
+        if(!userName.equals("") && password!=""){
+            User user =new User(userName,password);
+            request.getSession().setAttribute("user",user);
+            map.put("result","1");
+        }else{
+            map.put("result","0");
+        }
+        return map;
     }
     
     @RequestMapping("random")
@@ -79,7 +100,7 @@ public class ThymeleafController {
         learnList.add(bean);
         bean =new LearnResouce("林祥纤博客系列","从零开始学Spring Boot ","http://412887952-qq-com.iteye.com/category/356333");
         learnList.add(bean);
-        ModelAndView modelAndView = new ModelAndView("/index");
+        ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("learnList", learnList);
         return modelAndView;
     }

@@ -2,14 +2,18 @@ package cn.bayllech.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 
 @SpringBootApplication
-//@EnableConfigurationProperties({ConsumerConfig.class})
-public class ProjectApplication{
-   
-    
-    public static void main(String[] args) {
-        SpringApplication.run(ProjectApplication.class, args);
-    }
+public class ProjectApplication extends SpringBootServletInitializer{
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(ProjectApplication.class);
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProjectApplication.class, args);
+	}
 }
