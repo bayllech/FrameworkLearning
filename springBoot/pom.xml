@@ -187,6 +187,14 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+
     </dependencies>
 
 	<build>
@@ -198,7 +206,8 @@
 					<!--fork :  如果没有该项配置devtools不会起作用，即应用不会restart -->
 					<fork>true</fork>
 					<addResources>true</addResources><!--支持静态文件热部署-->
-				</configuration>
+                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+                </configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
