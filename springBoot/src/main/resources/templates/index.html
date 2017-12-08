@@ -2,14 +2,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org">
-	<title>learn Resources</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" th:href="@{/font-awesome/css/font-awesome.css}" href="../static/font-awesome/css/font-awesome.css">
-	<!--<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}" href="../static/bootstrap/css/bootstrap.css">-->
-	<link rel="stylesheet" th:href="@{/css/sierra.css}" href="../static/css/sierra.css">
-	<script th:src="@{/js/jquery.js}" src="../static/js/jquery.js"></script>
-	<script th:src="@{/bootstrap/js/bootstrap.js}" src="../static/bootstrap/js/bootstrap.js"></script>
-	</head>
+<title>learn Resources</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" th:href="@{/font-awesome/css/font-awesome.css}" href="../static/font-awesome/css/font-awesome.css">
+<!--<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}" href="../static/bootstrap/css/bootstrap.css">-->
+<link rel="stylesheet" th:href="@{/sierra/dev/sierra.css}" href="../static/sierra/dev/sierra.css">
+<script th:src="@{/js/jquery.js}" src="../static/js/jquery.js"></script>
+<!--<script th:src="@{/bootstrap/js/bootstrap.js}" src="../static/bootstrap/js/bootstrap.js"></script>-->
+</head>
 <body>
 
 <div style="text-align: center;margin:0 auto;width: 1000px; ">
@@ -20,15 +20,33 @@
 			<td>教程名称</td>
 			<td>地址</td>
 		</tr>
-		<!--/*@thymesVar id="learn" type="cn.bayllech.project.pojo.LearnResouce"*/-->
-		<!--/*@thymesVar id="learnList" type="java.util.List"*/-->
 		<tr th:each="learn : ${learnList}">
 			<td th:text="${learn.author}">嘟嘟MD</td>
 			<td th:text="${learn.title}">SPringBoot干货系列</td>
 			<td><a th:href="${learn.url}" target="_blank">点我</a></td>
 		</tr>
 	</table>
+	
+	<input type="text" value="html value" th:value="${session.user.username}">
+	<div th:object="${session.user}">
+		<p>username: <span th:text="*{username}">Saturn</span></p>
+	</div>
+	
+	
+	<dt>价格</dt>
+	<dd th:text="${#numbers.formatDecimal(price,0,2)}">180</dd>
+	<dt>进货日期</dt>
+	<dd th:text="${#dates.format(date,'yyyy-MM-dd')}">2014-12-01</dd>
+	
+	<form th:action="@{/bb}" th:object="${session.user}" method="post" th:method="post">
+		
+		<input type="text" id="username" name="username" th:value="*{username}"/>
+		<button type="button" class="button button-small button-primary">提交</button>
+	
+	</form>
+	
 </div>
+
 
 <!--div 添加则全部居中显示 style="text-align: center;"-->
 <div class="container">
@@ -343,33 +361,33 @@
 				<h2 class="text-medium text-gray">Standard</h2>
 				<table class="table">
 					<thead>
-						<tr class="text-small align-left">
-							<th>Header 1</th>
-							<th>Header 2</th>
-							<th>Header 3</th>
-						</tr>
+					<tr class="text-small align-left">
+						<th>Header 1</th>
+						<th>Header 2</th>
+						<th>Header 3</th>
+					</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Lemon</td>
-							<td>Orange</td>
-							<td>Kiwi</td>
-						</tr>
-						<tr>
-							<td>Sugar</td>
-							<td>Salt</td>
-							<td>Pepper</td>
-						</tr>
-						<tr>
-							<td>Fork</td>
-							<td>Knife</td>
-							<td>Spoon</td>
-						</tr>
-						<tr>
-							<td>Cup</td>
-							<td>Glass</td>
-							<td>Pitcher</td>
-						</tr>
+					<tr>
+						<td>Lemon</td>
+						<td>Orange</td>
+						<td>Kiwi</td>
+					</tr>
+					<tr>
+						<td>Sugar</td>
+						<td>Salt</td>
+						<td>Pepper</td>
+					</tr>
+					<tr>
+						<td>Fork</td>
+						<td>Knife</td>
+						<td>Spoon</td>
+					</tr>
+					<tr>
+						<td>Cup</td>
+						<td>Glass</td>
+						<td>Pitcher</td>
+					</tr>
 					</tbody>
 				</table>
 			</div>
@@ -785,7 +803,7 @@
 			<a href="#" class="js-show-hide-loading-spinner button block-mobile" title="Start / stop loader">Show loading spinner</a>
 		</div>
 	</section>
-	
+
 </div>
 
 

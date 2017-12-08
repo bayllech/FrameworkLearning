@@ -14,10 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.servlet.http.HttpSession;
+import java.util.*;
 
 /**
  * @Author bei.qi
@@ -78,7 +76,7 @@ public class ThymeleafController {
     }
     
     @RequestMapping("list")
-    public ModelAndView index(){
+    public ModelAndView index(HttpServletRequest request){
         List<LearnResouce> learnList =new ArrayList<LearnResouce>();
         LearnResouce bean =new LearnResouce("官方参考文档","Spring Boot Reference Guide","http://docs.spring.io/spring-boot/docs/1.5.1.RELEASE/reference/htmlsingle/#getting-started-first-application");
         learnList.add(bean);
@@ -102,6 +100,11 @@ public class ThymeleafController {
         learnList.add(bean);
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("learnList", learnList);
+        HttpSession session = request.getSession();
+    
+        modelAndView.addObject("price", 128.125);
+        modelAndView.addObject("date", new Date());
+        
         return modelAndView;
     }
     
