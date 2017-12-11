@@ -1,25 +1,28 @@
-package cn.bayllech.springbootrabbitmq.send;
+package cn.bayllech.springbootrabbitmq.controller;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 
 /**
  * @Author bei.qi
  * @Description
- * @Date 2017-12-11 10:26
+ * @Date 2017-12-11 15:44
  */
-@Component
-public class RabbitSend {
+@RestController
+public class RabbitMQTest {
     
     @Autowired
-    private RabbitTemplate rabbitTemplate;
+    RabbitTemplate rabbitTemplate;
     
-    public void send() {
+    @RequestMapping("/rabbit")
+    public void test(){
         String context = "hello " + new Date();
         System.out.println("Sender : " + context);
         this.rabbitTemplate.convertAndSend("spring-boot",context);
     }
+    
 }
