@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RabbitListener(queues = "spring-boot")
-public class HelloReceiver {
+public class HelloReceiver2 {
     
     @RabbitHandler
     public void process(String hello) {
-        System.out.println("Receiver  1 : " + hello);
+        System.out.println("Receiver 2 : " + hello);
     }
     
 }

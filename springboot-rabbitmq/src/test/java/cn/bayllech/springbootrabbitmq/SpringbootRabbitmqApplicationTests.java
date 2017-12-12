@@ -10,10 +10,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringbootRabbitmqApplicationTests {
-
-	@Test
-	public void contextLoads() {
-	}
+    
+    @Test
+    public void contextLoads() {
+    }
     
     @Autowired
     private RabbitSend rabbitSend;
@@ -22,5 +22,12 @@ public class SpringbootRabbitmqApplicationTests {
     public void hello() throws Exception {
         rabbitSend.send();
     }
-
+    
+    @Test
+    public void oneToMany() throws Exception {
+        for (int i=0;i<100;i++){
+            rabbitSend.send(i);
+        }
+    }
+    
 }

@@ -1,13 +1,6 @@
 package cn.bayllech.springbootrabbitmq.config;
 
-import cn.bayllech.springbootrabbitmq.receiver.HelloReceiver;
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
-import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -23,10 +16,10 @@ public class RabbitConfig {
     
     @Bean
     Queue queue() {
-        return new Queue(queueName, false);
+        return new Queue("spring-boot");
     }
     
-    @Bean
+   /* @Bean
     TopicExchange exchange() {
         return new TopicExchange("spring-boot-exchange");
     }
@@ -54,5 +47,5 @@ public class RabbitConfig {
         return new MessageListenerAdapter(receiver, "receiveMessage");
     }
     
-    
+    */
 }

@@ -22,4 +22,10 @@ public class RabbitSend {
         System.out.println("Sender : " + context);
         this.rabbitTemplate.convertAndSend("spring-boot",context);
     }
+    
+    public void send(Integer i) {
+        String context = "spring boot 发送 queue ******" + i;
+        System.out.println("Sender : " + context);
+        this.rabbitTemplate.convertAndSend("spring-boot",context);
+    }
 }
