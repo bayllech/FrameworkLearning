@@ -1,6 +1,7 @@
 package cn.bayllech.springbootrabbitmq;
 
 import cn.bayllech.springbootrabbitmq.send.RabbitSend;
+import cn.bayllech.springbootrabbitmq.send.RabbitSend2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class SpringbootRabbitmqApplicationTests {
     
     @Autowired
     private RabbitSend rabbitSend;
+    @Autowired
+    private RabbitSend2 rabbitSend2;
     
     @Test
     public void hello() throws Exception {
@@ -27,6 +30,14 @@ public class SpringbootRabbitmqApplicationTests {
     public void oneToMany() throws Exception {
         for (int i=0;i<100;i++){
             rabbitSend.send(i);
+        }
+    }
+    
+    @Test
+    public void manyToMany() throws Exception {
+        for (int i=0;i<100;i++){
+            rabbitSend.send(i);
+            rabbitSend2.send(i);
         }
     }
     

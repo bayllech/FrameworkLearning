@@ -12,20 +12,20 @@ import java.util.Date;
  * @Date 2017-12-11 10:26
  */
 @Component
-public class RabbitSend {
+public class RabbitSend2 {
     
     @Autowired
     private RabbitTemplate rabbitTemplate;
     
     public void send() {
         String context = "hello " + new Date();
-        System.out.println("Sender : " + context);
+        System.out.println("Sender 2 : " + context);
         this.rabbitTemplate.convertAndSend("spring-boot",context);
     }
     
     public void send(Integer i) {
         String context = "spring boot 发送 queue ******" + i;
-        System.out.println("Sender 1 : " + context);
+        System.out.println("Sender 2 : " + context);
         this.rabbitTemplate.convertAndSend("spring-boot",context);
     }
 }
