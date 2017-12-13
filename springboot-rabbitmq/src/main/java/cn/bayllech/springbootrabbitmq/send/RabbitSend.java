@@ -42,4 +42,10 @@ public class RabbitSend {
         this.rabbitTemplate.convertAndSend("exchange", "topic.messages", context);
     }
     
+    public void sendFanout() {
+        String context = "hi, fanout msg ";
+        System.out.println("Sender : " + context);
+        this.rabbitTemplate.convertAndSend("fanoutExchange","无论什么都会被忽略", context);
+    }
+    
 }

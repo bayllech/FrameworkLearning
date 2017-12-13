@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 //@RabbitListener(queues = "spring-boot")
-@RabbitListener(queues = "topic.messages")
+//@RabbitListener(queues = "fanout.A")
+@RabbitListener(queues = "fanout.B")
 public class HelloReceiver2 {
     
     @RabbitHandler

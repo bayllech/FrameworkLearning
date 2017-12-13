@@ -47,4 +47,10 @@ public class SpringbootRabbitmqApplicationTests {
         rabbitSend.send2();
     }
     
+    @Test
+    public void fanoutExchange() throws Exception {
+        rabbitSend.sendFanout();
+    
+    }
+    
 }
