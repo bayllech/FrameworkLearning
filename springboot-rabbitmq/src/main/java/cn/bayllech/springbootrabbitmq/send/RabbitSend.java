@@ -28,4 +28,18 @@ public class RabbitSend {
         System.out.println("Sender 1 : " + context);
         this.rabbitTemplate.convertAndSend("spring-boot",context);
     }
+    
+    //exchange 发送队列
+    public void send1() {
+        String context = "hi, 这是 message 1";
+        System.out.println("Sender 1 : " + context);
+        this.rabbitTemplate.convertAndSend("exchange", "topic.message", context);
+    }
+    
+    public void send2() {
+        String context = "hi, 这是 messages 2";
+        System.out.println("Sender 2 : " + context);
+        this.rabbitTemplate.convertAndSend("exchange", "topic.messages", context);
+    }
+    
 }

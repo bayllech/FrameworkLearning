@@ -41,4 +41,10 @@ public class SpringbootRabbitmqApplicationTests {
         }
     }
     
+    @Test
+    public void exchange() throws Exception {
+        rabbitSend.send1();
+        rabbitSend.send2();
+    }
+    
 }
