@@ -201,6 +201,12 @@
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver</artifactId>
+            <version>3.6.0</version>
+        </dependency>
+
     </dependencies>
 
 	<build>
