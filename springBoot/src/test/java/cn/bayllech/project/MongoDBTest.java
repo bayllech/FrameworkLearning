@@ -64,11 +64,12 @@ public class MongoDBTest {
          * 2. 创建文档集合List<Document>
          * 3. 将文档集合插入数据库集合中 mongoCollection.insertMany(List<Document>) 插入单个文档可以用 mongoCollection.insertOne(Document)
          * */
-        Document document = new Document("title", "mongodb-java")
+/*        Document document = new Document("title", "mongodb-java")
                 .append("description", "database")
                 .append("likes", 100)
-                .append("by", "Fly");
-    
+                .append("by", "Fly");*/
+        Document document = Document.parse("{\"title\" : \"MongoDB 2\", \"description\" : \"MongoDB 是一个 Nosql 数据库\", \"by\" : \"菜鸟教程\", \"url\" : \"http://www.runoob.com\", \"tags\" : [\"mongodb\", \"database\", \"NoSQL\"], \"likes\" : 100 }");
+        
         List<Document> documents = new ArrayList<Document>();
         documents.add(document);
         
