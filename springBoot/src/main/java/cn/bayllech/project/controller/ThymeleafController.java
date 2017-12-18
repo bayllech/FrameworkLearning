@@ -5,6 +5,7 @@ import cn.bayllech.project.eto.ConsumerConfig;
 import cn.bayllech.project.eto.RandomNum;
 import cn.bayllech.project.pojo.LearnResouce;
 import cn.bayllech.project.pojo.User;
+import cn.bayllech.project.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,15 @@ public class ThymeleafController {
     @Autowired ConfigProperties configProperties;
     
     @Autowired RandomNum randomNum;
+    
+    @Autowired UserInfoService userInfoService;
+    
+    @RequestMapping("/mongoSave")
+    public String saveUser() {
+        User user = new User(1L,"tom","123456");
+        userInfoService.saveUser(user);
+        return "ok";
+    }
     
     @RequestMapping("")
     public String domain() {
