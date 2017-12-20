@@ -14,10 +14,9 @@ import org.junit.Test;
 public class MybatisTest {
     
     public ClassPool pool = ClassPool.getDefault();
-    
     @Test
     public void test() throws NotFoundException {
-        pool.insertClassPath("\"C:\\Program Files\\JetBrains\\javassist\\iMybatis-3.42.jar\"");
+        pool.insertClassPath("C:/Program Files/JetBrains/javassist/iMybatis-3.21.jar");
         CtClass m = pool.get("com.s7.mybatis.e.m");
         CtClass ar = pool.get("com.s7.mybatis.e.ar");
         CtClass h = pool.get("com.s7.mybatis.e.h");
@@ -37,7 +36,7 @@ public class MybatisTest {
             ct.setBody("{" +
                     "       com.google.gson.JsonObject var3 = new com.google.gson.JsonObject();\n" +
                     "       var3.addProperty(\"productId\", Integer.valueOf(1));\n" +
-                    "       var3.addProperty(\"productVersion\", \"3.42\");\n" +
+                    "       var3.addProperty(\"productVersion\", \"3.21\");\n" +
                     "       return true;\n" +
                     "   }");
             
@@ -87,12 +86,12 @@ public class MybatisTest {
                     "       }" +
                     "   }");
             
-            m.writeFile("/Users/Administrator/Desktop/");
-            ar.writeFile("/Users/Administrator/Desktop/");
-            h.writeFile("/Users/Administrator/Desktop/");
-            S.writeFile("/Users/Administrator/Desktop/");
-            an.writeFile("/Users/Administrator/Desktop/");
-            ao.writeFile("/Users/Administrator/Desktop/");
+            m.writeFile("C:/Program Files/JetBrains/javassist/");
+            ar.writeFile("C:/Program Files/JetBrains/javassist/");
+            h.writeFile("C:/Program Files/JetBrains/javassist/");
+            S.writeFile("C:/Program Files/JetBrains/javassist/");
+            an.writeFile("C:/Program Files/JetBrains/javassist/");
+            ao.writeFile("C:/Program Files/JetBrains/javassist/");
         } catch (Exception e) {
             e.printStackTrace();
         }
