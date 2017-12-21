@@ -210,11 +210,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>us.deathmarine</groupId>
-            <artifactId>luyten</artifactId>
-            <version>0.5.3</version>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
         </dependency>
+
 
     </dependencies>
 
