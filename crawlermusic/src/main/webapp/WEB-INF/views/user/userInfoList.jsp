@@ -276,7 +276,8 @@
     //搜索页码重设
     $(function () {
         $("#btn_search").click(function () {
-            $('#tb_departments').bootstrapTable("refreshOptions", {p: 1, pageSize: 10})
+            // $('#tb_departments').bootstrapTable("refreshOptions", {p: 1, pageSize: 10})
+            $('#tb_departments').bootstrapTable("refreshOptions", {pageNumber: 1})
         })
     });
 
