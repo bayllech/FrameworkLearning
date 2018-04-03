@@ -1,3 +1,4 @@
+/*
 package cn.bayllech.project;
 
 import javassist.ClassPool;
@@ -8,11 +9,13 @@ import org.junit.Test;
 
 import java.lang.reflect.InvocationTargetException;
 
+*/
 /**
  * @Author bei.qi
  * @Description
  * @Date 2017-12-20 15:15
- */
+ *//*
+
 public class IedisTest {
     public ClassPool pool = ClassPool.getDefault();
     
@@ -59,3 +62,4 @@ public class IedisTest {
         }
     }
 }
+*/

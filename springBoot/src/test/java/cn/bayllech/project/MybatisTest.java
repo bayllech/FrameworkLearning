@@ -1,3 +1,4 @@
+/*
 package cn.bayllech.project;
 
 import javassist.ClassPool;
@@ -6,11 +7,13 @@ import javassist.CtMethod;
 import javassist.NotFoundException;
 import org.junit.Test;
 
+*/
 /**
  * @Author bei.qi
  * @Description
  * @Date 2017-12-20 10:19
- */
+ *//*
+
 public class MybatisTest {
     
     public ClassPool pool = ClassPool.getDefault();
@@ -97,3 +100,4 @@ public class MybatisTest {
         }
     }
 }
+*/
