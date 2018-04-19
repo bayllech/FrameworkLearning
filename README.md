@@ -1,6 +1,6 @@
 ## framework Learning
-  ### zookeeper + dubbo
+  ### zookeeper + dubbo
   ### bootstrap-table
   ### springboot
-  ### springboot + dubbo
+  ### springboot
   ### springCloud
